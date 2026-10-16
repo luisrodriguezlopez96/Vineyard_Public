@@ -1,1 +1,131 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 740" role="img" aria-label="Arquitectura de Gestión Vitícola"><rect width="1200" height="740" rx="18" fill="#fbfaf4"/><g font-family="Arial,sans-serif" fill="#1b402d"><text x="40" y="57" font-size="35" font-weight="700">Gestión Vitícola</text><text x="40" y="85" font-size="19" fill="#62744f">Arquitectura y Stack Tecnológico</text><rect x="325" y="30" width="535" height="180" rx="14" fill="#fff" stroke="#d7ddcc" stroke-width="2"/><text x="592" y="58" text-anchor="middle" font-size="18" font-weight="700">ESCRITORIO + MÓVIL</text><rect x="355" y="80" width="190" height="96" rx="9" fill="#e9f0e0" stroke="#b2c5a1"/><text x="450" y="118" text-anchor="middle" font-size="17" font-weight="700">Escritorio</text><text x="450" y="145" text-anchor="middle" font-size="14">Python · CustomTkinter</text><path d="M553 127h77" stroke="#729649" stroke-width="5" stroke-linecap="round"/><path d="M622 115l15 12-15 12" stroke="#729649" stroke-width="5" fill="none" stroke-linecap="round"/><rect x="646" y="80" width="185" height="96" rx="9" fill="#f5efdc" stroke="#d7cb9e"/><text x="738" y="118" text-anchor="middle" font-size="17" font-weight="700">PWA móvil</text><text x="738" y="145" text-anchor="middle" font-size="14">HTML · CSS · JS</text><text x="592" y="196" text-anchor="middle" font-size="14">Registro de campo · Sincronización · Modo offline</text><text x="600" y="255" text-anchor="middle" font-size="22" font-weight="700">ARQUITECTURA LOCAL</text><rect x="50" y="285" width="325" height="300" rx="14" fill="#f0f5e9" stroke="#cbd8bd" stroke-width="2"/><text x="212" y="318" text-anchor="middle" font-size="19" font-weight="700">APLICACIÓN DE ESCRITORIO</text><text x="78" y="365" font-size="16">• Gestión de parcelas y fincas</text><text x="78" y="405" font-size="16">• Producción por campañas</text><text x="78" y="445" font-size="16">• Agronomía y tratamientos</text><text x="78" y="485" font-size="16">• Documentos e informes</text><text x="78" y="525" font-size="16">• Mapas y configuración</text><rect x="438" y="285" width="325" height="180" rx="14" fill="#e7f1f6" stroke="#b2cbd8" stroke-width="2"/><text x="600" y="318" text-anchor="middle" font-size="19" font-weight="700">API LOCAL · FLASK</text><text x="465" y="362" font-size="16">• Endpoints REST</text><text x="465" y="398" font-size="16">• Emparejamiento de móvil</text><text x="465" y="434" font-size="16">• Sincronización de registros</text><rect x="438" y="505" width="325" height="118" rx="14" fill="#f2eaf2" stroke="#d2bdd4" stroke-width="2"/><text x="600" y="538" text-anchor="middle" font-size="19" font-weight="700">BASE DE DATOS LOCAL</text><text x="600" y="572" text-anchor="middle" font-size="17">SQLite · bodega.db</text><text x="600" y="597" text-anchor="middle" font-size="14">Datos de la explotación</text><rect x="825" y="285" width="325" height="300" rx="14" fill="#fcf5df" stroke="#e5d8a9" stroke-width="2"/><text x="987" y="318" text-anchor="middle" font-size="19" font-weight="700">APLICACIÓN MÓVIL (PWA)</text><text x="852" y="365" font-size="16">• Registro de pesadas</text><text x="852" y="405" font-size="16">• Consultas rápidas</text><text x="852" y="445" font-size="16">• Tratamientos y tareas</text><text x="852" y="485" font-size="16">• Captura sin conexión</text><text x="852" y="525" font-size="16">• Sincroniza al recuperar red</text><path d="M375 385h56M764 385h55" stroke="#597b43" stroke-width="4" stroke-linecap="round"/><path d="M420 374l12 11-12 11M776 374l-12 11 12 11" stroke="#597b43" stroke-width="4" fill="none"/><path d="M600 466v34M589 488l11 12 11-12" stroke="#6d8f4c" stroke-width="4" fill="none" stroke-linecap="round"/><rect x="50" y="650" width="1100" height="58" rx="12" fill="#fff" stroke="#d7ddcc"/><text x="75" y="684" font-size="16" font-weight="700">CLAVES</text><text x="180" y="684" font-size="15">Trabajo offline</text><text x="360" y="684" font-size="15">Datos locales</text><text x="510" y="684" font-size="15">Sincronización inteligente</text><text x="760" y="684" font-size="15">Multiplataforma</text><text x="955" y="684" font-size="15">Ligero y modular</text></g></svg>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1320 820" role="img" aria-labelledby="title desc">
+<title id="title">Arquitectura y stack tecnológico de Gestión Vitícola</title>
+<desc id="desc">Aplicación de escritorio como núcleo de gestión, API local Flask, base de datos SQLite y PWA móvil conectadas mediante sincronización offline.</desc>
+<defs>
+  <filter id="shadow" x="-20%" y="-20%" width="140%" height="150%"><feDropShadow dx="0" dy="8" stdDeviation="12" flood-color="#233a2b" flood-opacity=".08"/></filter>
+  <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 10 5 0 10Z" fill="#78916b"/></marker>
+  <style>
+  .sans{font-family:Inter,-apple-system,BlinkMacSystemFont,'Segoe UI',Arial,sans-serif}
+  .label{font-size:12px;font-weight:800;letter-spacing:2px;fill:#78836f}
+  .heading{font-size:33px;font-weight:720;letter-spacing:-1.5px;fill:#1b3025}
+  .sub{font-size:15px;fill:#737b70}
+  .cardtitle{font-size:19px;font-weight:750;fill:#1b3025}
+  .caps{font-size:10px;font-weight:800;letter-spacing:1.7px;fill:#78836f}
+  .body{font-size:14px;fill:#4f5c50}
+  .small{font-size:12px;fill:#697569}
+  .pill{font-size:11px;font-weight:750;fill:#445942}
+  </style>
+</defs>
+<rect width="1320" height="820" rx="22" fill="#f8f7f0"/>
+<g class="sans">
+  <text x="50" y="48" class="label">GESTIÓN VITÍCOLA / DISEÑO DEL SISTEMA</text>
+  <text x="50" y="91" class="heading">Una arquitectura pensada para el campo.</text>
+  <text x="50" y="121" class="sub">Gestión local, acceso móvil y sincronización cuando vuelve la conexión.</text>
+  <rect x="1068" y="45" width="200" height="38" rx="19" fill="#e7ecdd" stroke="#d4ddc5"/>
+  <circle cx="1090" cy="64" r="4" fill="#648451"/>
+  <text x="1104" y="68" font-size="11" font-weight="800" letter-spacing="1" fill="#3e5a39">LOCAL-FIRST · OFFLINE</text>
+
+  <!-- Desktop card -->
+  <g filter="url(#shadow)">
+    <rect x="50" y="170" width="350" height="344" rx="16" fill="#fffefb" stroke="#e0e4d8"/>
+  </g>
+  <rect x="50" y="170" width="350" height="7" rx="4" fill="#92a977"/>
+  <rect x="76" y="198" width="46" height="46" rx="12" fill="#eaf0e2"/>
+  <g transform="translate(87 210)" fill="none" stroke="#496b45" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+    <rect x="0" y="0" width="24" height="16" rx="2"/><path d="M12 16v5m-7 0h14"/>
+  </g>
+  <text x="139" y="213" class="caps">NÚCLEO DE GESTIÓN</text>
+  <text x="139" y="237" class="cardtitle">Aplicación de escritorio</text>
+  <text x="76" y="278" class="body">La información central de la explotación.</text>
+  <line x1="76" y1="299" x2="374" y2="299" stroke="#e8e9df"/>
+  <g fill="#91a47e">
+    <circle cx="82" cy="326" r="3"/><circle cx="82" cy="358" r="3"/><circle cx="82" cy="390" r="3"/><circle cx="82" cy="422" r="3"/><circle cx="82" cy="454" r="3"/>
+  </g>
+  <text x="95" y="331" class="body">Fincas, parcelas y mapas</text>
+  <text x="95" y="363" class="body">Producción por campañas</text>
+  <text x="95" y="395" class="body">Agronomía y tratamientos</text>
+  <text x="95" y="427" class="body">Documentación e informes</text>
+  <text x="95" y="459" class="body">Configuración y copias</text>
+  <rect x="76" y="476" width="142" height="22" rx="11" fill="#edf1e7"/>
+  <text x="147" y="491" text-anchor="middle" class="pill">Python · CustomTkinter</text>
+
+  <!-- Center API card -->
+  <g filter="url(#shadow)">
+    <rect x="485" y="170" width="350" height="344" rx="16" fill="#fffefb" stroke="#d8e1e4"/>
+  </g>
+  <rect x="485" y="170" width="350" height="7" rx="4" fill="#7298a2"/>
+  <rect x="511" y="198" width="46" height="46" rx="12" fill="#e7eff1"/>
+  <g transform="translate(522 209)" fill="none" stroke="#426c77" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M0 7 12 0l12 7-12 7Z"/><path d="M0 13l12 7 12-7M0 19l12 7 12-7"/>
+  </g>
+  <text x="574" y="213" class="caps">CAPA DE COMUNICACIÓN</text>
+  <text x="574" y="237" class="cardtitle">API local · Flask</text>
+  <text x="511" y="278" class="body">Conecta el escritorio con los dispositivos.</text>
+  <line x1="511" y1="299" x2="809" y2="299" stroke="#e4e9e7"/>
+  <g fill="#7899a1">
+    <circle cx="517" cy="326" r="3"/><circle cx="517" cy="358" r="3"/><circle cx="517" cy="390" r="3"/><circle cx="517" cy="422" r="3"/>
+  </g>
+  <text x="530" y="331" class="body">Endpoints REST · JSON</text>
+  <text x="530" y="363" class="body">Autenticación local</text>
+  <text x="530" y="395" class="body">Sincronización de registros</text>
+  <text x="530" y="427" class="body">Intercambio de archivos</text>
+  <rect x="511" y="476" width="134" height="22" rx="11" fill="#eaf0f1"/>
+  <text x="578" y="491" text-anchor="middle" class="pill">HTTP · REST API</text>
+
+  <!-- Mobile card -->
+  <g filter="url(#shadow)">
+    <rect x="920" y="170" width="350" height="344" rx="16" fill="#fffefb" stroke="#e6dfc8"/>
+  </g>
+  <rect x="920" y="170" width="350" height="7" rx="4" fill="#c3a86b"/>
+  <rect x="946" y="198" width="46" height="46" rx="12" fill="#f4eedc"/>
+  <g transform="translate(960 207)" fill="none" stroke="#806b3f" stroke-width="1.7" stroke-linecap="round">
+    <rect x="0" y="0" width="18" height="28" rx="3"/><path d="M6 4h6m-3 19h.1"/>
+  </g>
+  <text x="1009" y="213" class="caps">HERRAMIENTA DE CAMPO</text>
+  <text x="1009" y="237" class="cardtitle">Aplicación móvil · PWA</text>
+  <text x="946" y="278" class="body">Registro ágil desde la viña y la bodega.</text>
+  <line x1="946" y1="299" x2="1244" y2="299" stroke="#ebe6d8"/>
+  <g fill="#b59a5c">
+    <circle cx="952" cy="326" r="3"/><circle cx="952" cy="358" r="3"/><circle cx="952" cy="390" r="3"/><circle cx="952" cy="422" r="3"/>
+  </g>
+  <text x="965" y="331" class="body">Registro de pesadas</text>
+  <text x="965" y="363" class="body">Consulta de parcelas</text>
+  <text x="965" y="395" class="body">Tareas y tratamientos</text>
+  <text x="965" y="427" class="body">Captura sin conexión</text>
+  <rect x="946" y="476" width="146" height="22" rx="11" fill="#f2eddf"/>
+  <text x="1019" y="491" text-anchor="middle" class="pill">HTML · CSS · JavaScript</text>
+
+  <!-- Connection arrows -->
+  <path d="M400 340H475" fill="none" stroke="#78916b" stroke-width="2" marker-start="url(#arrow)" marker-end="url(#arrow)"/>
+  <rect x="399" y="307" width="76" height="23" rx="11" fill="#f8f7f0" stroke="#e1e4d8"/>
+  <text x="437" y="322" text-anchor="middle" font-size="10" font-weight="750" fill="#61745b">REST / JSON</text>
+  <path d="M835 340H910" fill="none" stroke="#78916b" stroke-width="2" marker-start="url(#arrow)" marker-end="url(#arrow)"/>
+  <rect x="834" y="307" width="76" height="23" rx="11" fill="#f8f7f0" stroke="#e1e4d8"/>
+  <text x="872" y="322" text-anchor="middle" font-size="10" font-weight="750" fill="#61745b">REST / JSON</text>
+
+  <!-- Database -->
+  <path d="M660 514V540" stroke="#78916b" stroke-width="2" marker-start="url(#arrow)" marker-end="url(#arrow)"/>
+  <rect x="485" y="548" width="350" height="82" rx="14" fill="#f0ebf2" stroke="#dcd1e2"/>
+  <rect x="504" y="565" width="44" height="44" rx="11" fill="#e4dae9"/>
+  <g transform="translate(517 575)" fill="none" stroke="#775d81" stroke-width="1.7"><ellipse cx="9" cy="3" rx="9" ry="3"/><path d="M0 3v18c0 4 18 4 18 0V3M0 9c0 4 18 4 18 0M0 15c0 4 18 4 18 0"/></g>
+  <text x="565" y="574" class="caps">ALMACENAMIENTO CENTRAL</text>
+  <text x="565" y="597" font-size="17" font-weight="750" fill="#312b35">SQLite · bodega.db</text>
+  <text x="565" y="616" class="small">Información local de la explotación</text>
+
+  <!-- Offline sync -->
+  <rect x="215" y="672" width="890" height="98" rx="16" fill="#e8eddf" stroke="#d5dfc8"/>
+  <circle cx="266" cy="721" r="25" fill="#d8e3c9"/>
+  <g transform="translate(250 705)" fill="none" stroke="#587849" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M27 6A13 13 0 0 0 5 10"/><path d="M5 4v7h7M5 23a13 13 0 0 0 22-4"/><path d="M27 25v-7h-7"/>
+  </g>
+  <text x="310" y="706" class="caps">CUANDO NO HAY CONEXIÓN</text>
+  <text x="310" y="733" font-size="22" font-weight="750" letter-spacing="-.5" fill="#1b3025">Cola de sincronización offline</text>
+  <text x="310" y="753" font-size="13" fill="#65715e">Conserva los registros en el dispositivo y sincroniza los cambios al recuperar conexión.</text>
+  <path d="M270 514V646Q270 657 283 657H400" fill="none" stroke="#9aaa8e" stroke-width="1.5" stroke-dasharray="5 6"/>
+  <path d="M1050 514V646Q1050 657 1037 657H920" fill="none" stroke="#9aaa8e" stroke-width="1.5" stroke-dasharray="5 6"/>
+  <path d="M660 630V659" fill="none" stroke="#9aaa8e" stroke-width="1.5" stroke-dasharray="4 5" marker-end="url(#arrow)"/>
+
+  <text x="50" y="795" font-size="11" fill="#899084" letter-spacing="1.2">PYTHON  ·  SQLITE  ·  FLASK  ·  PWA  ·  CARTOGRAFÍA  ·  INFORMES</text>
+  <text x="1270" y="795" text-anchor="end" font-size="11" fill="#899084">GESTIÓN VITÍCOLA</text>
+</g>
+</svg>
