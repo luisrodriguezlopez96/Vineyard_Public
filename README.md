@@ -10,7 +10,7 @@ Aplicación de escritorio + PWA móvil · Datos locales · Trabajo sin conexión
 
 La solución combina una aplicación de escritorio que actúa como núcleo de gestión con una PWA móvil para registrar información desde el viñedo. Los datos capturados sin conexión quedan guardados en el dispositivo y se sincronizan con la aplicación de escritorio cuando vuelve la conectividad.
 
-![Infografía de la arquitectura de Gestión Vitícola](assets/arquitectura.png)
+![Diagrama de arquitectura de Gestión Vitícola](assets/arquitectura.svg)
 
 ## Funcionalidades
 
