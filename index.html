@@ -47,7 +47,7 @@ body {
 a { color: inherit; }
 img { display: block; max-width: 100%; }
 button, a { -webkit-tap-highlight-color: transparent; }
-.wrap { width: min(calc(100% - 44px), var(--max)); margin-inline: auto; }
+.wrap { width: calc(100% - 64px); max-width: none; margin-inline: auto; }
 .site-header {
   position: sticky; top: 0; z-index: 20;
   background: rgba(253,251,247,.92);
@@ -228,7 +228,7 @@ button, a { -webkit-tap-highlight-color: transparent; }
   .status-top { gap: 30px; }
 }
 @media (max-width: 760px) {
-  .wrap { width: min(calc(100% - 32px), var(--max)); }
+  .wrap { width: calc(100% - 32px); max-width: none; }
   .nav { min-height: 68px; flex-wrap: wrap; gap: 8px; padding: 11px 0; }
   .brand-name { font-size: 17px; }
   .brand-sub { font-size: 8px; }
