@@ -1,23 +1,205 @@
-<!doctype html><html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="theme-color" content="#fdfbf7"><title>Guía funcional — Gestión Vitícola</title><meta name="description" content="Resumen público de las capacidades, condiciones y límites conocidos de Gestión Vitícola."><style>
-:root{color-scheme:light;--bg:#fdfbf7;--paper:#fffefa;--warm:#f5f0e7;--ink:#24221f;--muted:#6d6a63;--wine:#8b1a2b;--dark:#37141b;--gold:#c7a85a;--line:#e7e0d6;--green:#23724f;--amber:#936318}*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.65 Inter,system-ui,-apple-system,"Segoe UI",sans-serif}a{color:var(--wine)}.wrap{width:calc(100% - 40px);max-width:1100px;margin:auto}.top{padding:23px 0;border-bottom:1px solid var(--line);display:flex;justify-content:space-between;gap:18px;align-items:center}.brand{font:700 20px Georgia,serif;text-decoration:none;color:var(--dark)}.top a{font-size:12px;font-weight:750;text-decoration:none}.hero{padding:66px 0 44px}.eyebrow{text-transform:uppercase;letter-spacing:.15em;font-size:10px;font-weight:850;color:var(--wine)}h1,h2,h3{font-family:Georgia,serif;font-weight:500;letter-spacing:-.035em;line-height:1.15}h1{font-size:clamp(39px,6vw,64px);max-width:800px;margin:12px 0 18px}h1 em{color:var(--wine)}.lead{max-width:740px;color:var(--muted);font-size:16px}.meta{font-size:11px;color:var(--muted);margin-top:20px}.section{padding:46px 0}.section h2{font-size:clamp(30px,4vw,40px);margin:0 0 10px}.section-lead{color:var(--muted);max-width:700px;margin:0 0 25px}.grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:13px}.card{background:var(--paper);border:1px solid var(--line);border-radius:17px;padding:22px}.card .no{font-size:10px;letter-spacing:.12em;color:var(--wine);font-weight:850}.card h3{font-size:21px;margin:12px 0 8px}.card p{font-size:13px;color:var(--muted);margin:0}.states{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}.state{padding:18px;border-radius:14px;background:var(--warm)}.state strong{display:block;margin-bottom:6px;font-size:13px}.state p{margin:0;color:var(--muted);font-size:12px}.pill{display:inline-block;font-size:9px;font-weight:850;letter-spacing:.06em;text-transform:uppercase;margin:0 0 9px;padding:5px 7px;border-radius:5px}.ok{color:var(--green);background:#e8f5ec}.partial{color:var(--amber);background:#fff5dc}.pending{color:#6e4f55;background:#f3e4e6}.box{padding:23px;border-radius:16px;border:1px solid var(--line);background:var(--paper);margin-top:14px}.box h3{margin:0 0 12px;font-size:23px}.notice{padding:18px 20px;border-radius:13px;background:#fff8e7;border:1px solid #efe0b7;color:#705729;font-size:12px}.foot{margin-top:42px;padding:25px 0;border-top:1px solid var(--line);font-size:11px;color:var(--muted);display:flex;flex-wrap:wrap;gap:14px;justify-content:space-between}.foot a{font-weight:750;text-decoration:none}@media(max-width:760px){.grid,.states{grid-template-columns:1fr}.hero{padding-top:45px}.top{align-items:flex-start}.section{padding:34px 0}.card{padding:19px}}
-</style></head><body>
-<header class="wrap top"><a class="brand" href="../index.html">🍇 Gestión Vitícola</a><a href="../index.html">← Volver a la landing</a></header><main class="wrap">
-<section class="hero"><p class="eyebrow">Guía funcional · Presentación pública</p><h1>Una visión clara de lo que hace <em>Gestión Vitícola.</em></h1><p class="lead">Aplicación de escritorio con base de datos local y una PWA móvil para acercar la consulta y el registro al trabajo real del viñedo y la bodega. Esta página resume capacidades y límites conocidos; no sustituye al manual completo de uso.</p><p class="meta">Estado resumido según el manual de usuario revisado en octubre de 2026.</p></section>
-<section class="section"><h2>Capacidades principales</h2><p class="section-lead">La herramienta une información territorial, producción, labores y documentación para consultar la explotación con contexto.</p><div class="grid">
-<article class="card"><span class="no">01 / TERRITORIO</span><h3>Fincas y Ficha 360º</h3><p>Parcelas, subparcelas, geometrías, superficies e importación desde SIGPAC y Catastro. La ficha 360º resume producción, rendimiento, tratamientos, tareas y datos agronómicos.</p></article>
-<article class="card"><span class="no">02 / CAMPAÑA</span><h3>Producción y estimación</h3><p>Producción anual por subparcela, reparto de kilos ponderado por superficie y edad, y estimación de cosecha introducida manualmente.</p></article>
-<article class="card"><span class="no">03 / VENDIMIA</span><h3>Recepción móvil</h3><p>Registro de pesadas, fecha, cajas, grado y destino. Los tickets se sincronizan desde el móvil, se revisan y se consolidan en producción desde el escritorio.</p></article>
-<article class="card"><span class="no">04 / BODEGAS</span><h3>Gestión comercial</h3><p>Varias bodegas, condiciones por campaña y valoración estimada a partir de kilos, precio, IVA y retención. No genera liquidaciones ni facturas comerciales.</p></article>
-<article class="card"><span class="no">05 / AGRONOMÍA</span><h3>Suelo y nutrición</h3><p>Histórico de análisis de suelo, comparación con referencias y plan de abonado con riqueza NPK.</p></article>
-<article class="card"><span class="no">06 / CAMPO</span><h3>Tratamientos y tareas</h3><p>Registro de tratamientos fitosanitarios, plazos de seguridad y seguimiento de labores por subparcela.</p></article>
-<article class="card"><span class="no">07 / METEOROLOGÍA</span><h3>Clima</h3><p>Previsión e histórico de Open-Meteo, riesgo orientativo de mildiu, grados-día, balance hídrico y ventanas de vendimia.</p></article>
-<article class="card"><span class="no">08 / CUMPLIMIENTO</span><h3>Auditoría DO</h3><p>Importación de Hoja DO y RVG, vinculación con fincas y comprobaciones cruzadas frente a los límites configurados.</p></article>
-<article class="card"><span class="no">09 / INFORMACIÓN</span><h3>Documentos e informes</h3><p>Gabinete de facturas, análisis histórico y salidas PDF/HTML/CSV donde hay generador disponible.</p></article>
-</div></section>
-<section class="section"><h2>Estado y límites conocidos</h2><p class="section-lead">La aplicación continúa evolucionando. Se distinguen las funciones disponibles de aquellas que necesitan condiciones específicas o trabajo adicional.</p><div class="states">
-<div class="state"><span class="pill ok">Operativo</span><strong>Gestión principal</strong><p>Fincas, Ficha 360º, producción, estimación, agronomía, tratamientos, auditoría DO y gabinete de facturas.</p></div>
-<div class="state"><span class="pill partial">Parcial / condicionado</span><strong>Móvil, clima e informes</strong><p>La sincronización móvil requiere el escritorio activo y conectividad entre equipos. Instalar la PWA y preparar el uso offline requiere HTTPS. El catálogo de informes aún no está completo y los indicadores climáticos son orientativos.</p></div>
-<div class="state"><span class="pill pending">Pendiente / con incidencias</span><strong>Funciones por completar</strong><p>El calendario general no está disponible; la asignación de documentos desde el mapa está en desarrollo; el análisis gráfico y la edición de ciertas tareas conservan limitaciones conocidas.</p></div>
-</div><div class="box"><h3>Principios de diseño</h3><p>El núcleo de gestión usa datos locales en SQLite. La aplicación de escritorio es el centro de operación y la PWA permite registrar información de campo, almacenar temporalmente registros sin conexión y sincronizarlos cuando vuelve la conectividad. Los servicios externos se emplean para consultas concretas, como cartografía y meteorología.</p></div><div class="notice"><strong>Alcance público:</strong> esta guía es una descripción funcional general. No incluye la base de datos real de la explotación ni el código privado de la aplicación. Para conocer el detalle de cada pantalla y procedimiento, consulte el manual de usuario disponible en la distribución privada.</div></section>
-</main><footer class="wrap foot"><span>Gestión Vitícola · Vineyard</span><span><a href="../index.html">Landing</a> · <a href="https://github.com/luisrodriguezlopez96/Vineyard_Public" target="_blank" rel="noopener">Repositorio público ↗</a> · <a href="https://linkedin.com/in/luisrodriguezlopez96" target="_blank" rel="noopener">LinkedIn ↗</a></span></footer>
-</body></html>
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#fdfbf7">
+<title>Guía funcional — Gestión Vitícola</title>
+<meta name="description" content="Qué puedes hacer con Gestión Vitícola: gestión de fincas, producción, agronomía, vendimia, bodegas, documentación, clima e informes, con las limitaciones conocidas y funciones en desarrollo.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Guía funcional — Gestión Vitícola">
+<meta property="og:description" content="Conoce las funciones disponibles, las áreas con limitaciones y las mejoras en desarrollo.">
+<meta property="og:image" content="https://luisrodriguezlopez96.github.io/Vineyard_Public/assets/vista_gestion_fincas.png">
+<style>
+:root{color-scheme:light;--bg:#fdfbf7;--paper:#fffefa;--warm:#f5f0e7;--ink:#24221f;--muted:#6d6a63;--wine:#8b1a2b;--dark:#37141b;--gold:#c7a85a;--line:#e7e0d6;--green:#23724f;--green-bg:#e8f5ec;--amber:#936318;--amber-bg:#fff2d8;--violet:#62508a;--violet-bg:#eeeaf7}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:24px}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.65 Inter,system-ui,-apple-system,"Segoe UI",sans-serif}
+a{color:var(--wine)}
+.wrap{width:calc(100% - 40px);max-width:1160px;margin:auto}
+.top{padding:22px 0;border-bottom:1px solid var(--line);display:flex;justify-content:space-between;gap:18px;align-items:center}
+.brand{font:700 20px Georgia,"Times New Roman",serif;text-decoration:none;color:var(--dark);white-space:nowrap}
+.top a:last-child{font-size:13px;font-weight:750;text-decoration:none}
+.hero{padding:66px 0 38px}
+.eyebrow{text-transform:uppercase;letter-spacing:.15em;font-size:11px;font-weight:850;color:var(--wine);margin:0}
+h1,h2,h3{font-family:Georgia,"Times New Roman",serif;font-weight:500;letter-spacing:-.035em;line-height:1.15}
+h1{font-size:clamp(40px,6vw,66px);max-width:900px;margin:13px 0 20px}
+h1 em,h2 em{color:var(--wine);font-weight:500}
+.lead{max-width:780px;color:var(--muted);font-size:18px;line-height:1.75;margin:0}
+.hero-meta{display:flex;flex-wrap:wrap;gap:9px;margin-top:22px}
+.meta-chip{font-size:12px;font-weight:700;color:#5c554b;padding:7px 11px;border:1px solid var(--line);border-radius:999px;background:rgba(255,254,250,.75)}
+.jump-links{display:flex;flex-wrap:wrap;gap:9px;margin-top:28px}
+.jump-links a{font-size:12px;font-weight:750;text-decoration:none;color:var(--dark);border-bottom:1px solid #d6c8b5;padding:4px 0}
+.section{padding:46px 0}
+.section-head{display:flex;align-items:end;justify-content:space-between;gap:24px;margin-bottom:25px}
+.section h2{font-size:clamp(30px,4vw,43px);margin:0}
+.section-lead{max-width:650px;color:var(--muted);margin:0;font-size:14px;line-height:1.7}
+.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;align-items:stretch}
+.card{min-width:0;background:var(--paper);border:1px solid var(--line);border-radius:17px;padding:23px 24px;display:flex;flex-direction:column}
+.card-top{display:flex;align-items:flex-start;justify-content:space-between;gap:12px;margin-bottom:16px}
+.no{font-size:10px;letter-spacing:.11em;color:var(--wine);font-weight:850;line-height:1.5}
+.pill{display:inline-block;border-radius:999px;padding:5px 9px;font-size:10px;line-height:1.3;font-weight:850;text-align:center;flex-shrink:0}
+.available{color:var(--green);background:var(--green-bg)}
+.limited{color:var(--amber);background:var(--amber-bg)}
+.future{color:var(--violet);background:var(--violet-bg)}
+.card h3{font-size:24px;margin:0 0 10px}
+.card p{font-size:15px;line-height:1.75;color:#615d56;margin:0 0 12px}
+.card p:last-child{margin-bottom:0}
+.card ul{padding-left:19px;margin:0 0 12px;color:#615d56;font-size:14px;line-height:1.75}
+.card li+li{margin-top:3px}
+.card-note{margin-top:auto;padding-top:12px;border-top:1px solid var(--line);font-size:12px!important;color:#797168!important}
+.card-planned{background:#fbf9fe;border-style:dashed}
+.summary{padding:28px;border:1px solid var(--line);border-radius:18px;background:var(--warm);margin-top:20px}
+.summary h2{font-size:28px;margin:0 0 14px}
+.summary-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
+.summary-item{padding:16px;border-radius:13px;background:rgba(255,254,250,.85)}
+.summary-item strong{display:block;font-size:14px;margin-bottom:5px}
+.summary-item p{font-size:13px;color:var(--muted);margin:0;line-height:1.65}
+.state-dot{display:inline-block;width:8px;height:8px;border-radius:100%;margin-right:7px;vertical-align:1px}
+.dot-green{background:var(--green)}.dot-amber{background:#c08a21}.dot-violet{background:#8e7bb7}
+.note{padding:18px 20px;border:1px solid #e7d8ba;background:#fff8e7;color:#705729;border-radius:14px;margin-top:15px;font-size:13px;line-height:1.7}
+.note strong{color:#4b3920}
+.footer{margin-top:34px;padding:24px 0 34px;border-top:1px solid var(--line);font-size:12px;color:var(--muted);display:flex;flex-wrap:wrap;gap:14px;justify-content:space-between}
+.footer a{font-weight:750;text-decoration:none}
+a:focus-visible{outline:3px solid var(--gold);outline-offset:3px;border-radius:4px}
+@media(max-width:820px){
+ .section-head{display:block}.section-lead{margin-top:12px}
+ .grid{grid-template-columns:1fr 1fr}
+ .summary-grid{grid-template-columns:1fr}
+ .summary{padding:20px}
+ .card{padding:20px}
+}
+@media(max-width:560px){
+ .wrap{width:calc(100% - 30px)}
+ .top{align-items:flex-start;padding:17px 0}.brand{font-size:18px}.top a:last-child{font-size:12px;text-align:right}
+ .hero{padding:44px 0 28px}.lead{font-size:16px}
+ .section{padding:32px 0}.grid{grid-template-columns:1fr;gap:11px}
+ .card{padding:19px}.card h3{font-size:23px}.card p{font-size:15px}
+ .summary h2{font-size:25px}
+ .jump-links{gap:11px 15px}
+}
+</style>
+</head>
+<body>
+<header class="wrap top">
+  <a class="brand" href="../index.html">🍇 Gestión Vitícola</a>
+  <a href="../index.html">← Volver a la landing</a>
+</header>
+<main class="wrap">
+  <section class="hero" id="inicio">
+    <p class="eyebrow">Guía funcional · Presentación pública</p>
+    <h1>Qué puedes hacer con <em>Gestión Vitícola.</em></h1>
+    <p class="lead">Una herramienta de gestión vitícola nacida de las necesidades de una explotación familiar. Aquí encontrarás qué funciones están disponibles, cuáles tienen limitaciones conocidas y qué ideas siguen en desarrollo.</p>
+    <div class="hero-meta">
+      <span class="meta-chip">Escritorio y aplicación móvil</span>
+      <span class="meta-chip">Datos territoriales y de campaña</span>
+      <span class="meta-chip">Actualizada: octubre de 2026</span>
+    </div>
+    <nav class="jump-links" aria-label="Ir a una función">
+      <a href="#fincas">Fincas</a><a href="#produccion">Producción y agronomía</a><a href="#campo">Tratamientos y tareas</a><a href="#vendimia">Vendimia y bodegas</a><a href="#control">DO y facturas</a><a href="#analisis">Análisis gráfico</a><a href="#documentos">Documentación</a><a href="#geocampo">GeoCampo</a><a href="#clima">Clima</a><a href="#informes">Informes</a>
+    </nav>
+  </section>
+
+  <section class="section" id="capacidades">
+    <div class="section-head">
+      <h2>Funciones principales</h2>
+      <p class="section-lead">Cada área está descrita según su alcance actual. Las etiquetas ayudan a distinguir lo que ya puedes utilizar de las funciones con limitaciones o en preparación.</p>
+    </div>
+    <div class="grid">
+      <article class="card" id="fincas">
+        <div class="card-top"><span class="no">01 / TERRITORIO</span><span class="pill available">Disponible</span></div>
+        <h3>Fincas y Ficha 360º</h3>
+        <p>Organiza la explotación en parcelas, subparcelas y fincas. Consulta superficies, pendiente, año de plantación, geometrías y ubicación en el mapa; importa contornos desde SIGPAC o Catastro.</p>
+        <p>La Ficha 360º reúne en una sola vista datos de producción, rendimiento, grado, costes, tratamientos, tareas, alertas, evolución histórica y contexto agronómico de cada subparcela.</p>
+        <p class="card-note">La cartografía, la importación de datos territoriales y la altitud requieren conexión a Internet y contornos geográficos adecuados.</p>
+      </article>
+
+      <article class="card" id="produccion">
+        <div class="card-top"><span class="no">02 / CAMPAÑAS Y AGRONOMÍA</span><span class="pill available">Disponible</span></div>
+        <h3>Producción, estimación y suelo</h3>
+        <p>Registra los kilos y el grado por subparcela y campaña, compara la evolución histórica y reparte la producción de una parcela entre subparcelas según superficie y edad de la viña.</p>
+        <p>La estimación de cosecha permite introducir los kilos previstos y compararlos con campañas anteriores. Guarda análisis de suelo, compara sus valores con referencias y consulta el plan de abonado con riqueza NPK.</p>
+        <p class="card-note">La estimación de cosecha es manual: la aplicación no calcula todavía una predicción automática. En el escritorio, los abonados registrados no se pueden editar ni eliminar.</p>
+      </article>
+
+      <article class="card" id="campo">
+        <div class="card-top"><span class="no">03 / TRABAJO DE CAMPO</span><span class="pill limited">Operativo con limitaciones</span></div>
+        <h3>Tratamientos y tareas</h3>
+        <p>Registra aplicaciones fitosanitarias, productos, dosis, superficies tratadas y plazos de seguridad. Planifica y documenta labores como poda, deshojado y otras tareas por subparcela, con estados, fechas, jornales y notas.</p>
+        <p class="card-note">Los tratamientos se guardan en la base de datos, pero no se editan directamente en el escritorio. Al editar una tarea, el cambio de subparcela no se guarda; si necesitas corregirlo, debes recrear la tarea.</p>
+      </article>
+
+      <article class="card" id="vendimia">
+        <div class="card-top"><span class="no">04 / VENDIMIA</span><span class="pill limited">Disponible con condiciones</span></div>
+        <h3>Vendimia y bodegas</h3>
+        <p>Registra pesadas desde la aplicación móvil VitiVal con fecha, kilos, grado, número de cajas, ticket de bodega y destino. Revisa las recepciones, consulta los kilos por día y campaña y consolida las pesadas en la producción.</p>
+        <p>Gestiona las bodegas compradoras, sus condiciones por campaña y una valoración estimada de las entregas. Hay resúmenes e informes de vendimia disponibles según los generadores implementados.</p>
+        <p class="card-note">La valoración económica es estimada: la herramienta no genera liquidaciones ni facturas comerciales. La ubicación GPS y la foto de la pesada desde el móvil no están disponibles actualmente.</p>
+      </article>
+
+      <article class="card" id="control">
+        <div class="card-top"><span class="no">05 / CONTROL Y ECONOMÍA</span><span class="pill available">Disponible</span></div>
+        <h3>Auditoría DO y gabinete de facturas</h3>
+        <p>Importa la Hoja DO y el RVG, vincula los registros con las fincas y compara las declaraciones con los cupos configurados por variedad. La auditoría cruzada ayuda a detectar registros sin vincular y datos que conviene revisar.</p>
+        <p>Almacena facturas en PDF, enlázalas con campañas y parcelas, filtra por proveedor o concepto y vuelve a encontrar un documento sin rebuscar entre carpetas. Los datos guardados también sirven para analizar los gastos de la explotación.</p>
+        <p class="card-note">La auditoría es una ayuda para revisar la información; la aplicación no sustituye la validación oficial ni el criterio técnico de la denominación.</p>
+      </article>
+
+      <article class="card" id="analisis">
+        <div class="card-top"><span class="no">06 / ANÁLISIS</span><span class="pill limited">Disponible con limitaciones</span></div>
+        <h3>Análisis gráfico</h3>
+        <p>Explora la evolución histórica de la producción, compara campañas y parcelas, consulta el rendimiento medio y observa cómo se distribuye la cosecha entre las subparcelas.</p>
+        <p class="card-note">Algunos indicadores de rendimiento utilizan umbrales fijos que no equivalen a los límites configurados por variedad. Para revisar cupos declarados, utiliza la sección Auditoría DO.</p>
+      </article>
+
+      <article class="card" id="documentos">
+        <div class="card-top"><span class="no">07 / DOCUMENTACIÓN</span><span class="pill limited">Consulta disponible</span></div>
+        <h3>Documentos vinculados a las parcelas</h3>
+        <p>El Mapa Legal permite localizar las fincas que tienen documentos vinculados y abrir la documentación disponible. El gabinete, por su parte, organiza las facturas y permite consultarlas por campaña, proveedor, concepto y parcelas asociadas.</p>
+        <p class="card-note">Asignar o cambiar documentos legales directamente desde el Mapa Legal está en desarrollo; actualmente esa vista es de consulta.</p>
+      </article>
+
+      <article class="card card-planned" id="geocampo">
+        <div class="card-top"><span class="no">08 / INCIDENCIAS EN EL TERRENO</span><span class="pill future">En desarrollo</span></div>
+        <h3>GeoCampo</h3>
+        <p>La idea es registrar incidencias directamente en el lugar donde aparecen: marcar un alambre roto, localizar una cepa muerta o guardar una nota de campo para volver después al punto exacto y planificar su reparación o replantación.</p>
+        <p class="card-note">Es una función prevista; no debe considerarse disponible en la versión actual.</p>
+      </article>
+
+      <article class="card" id="clima">
+        <div class="card-top"><span class="no">09 / METEOROLOGÍA</span><span class="pill limited">Disponible con condiciones</span></div>
+        <h3>Clima y riesgos agronómicos</h3>
+        <p>Consulta previsiones e histórico meteorológico asociados a las subparcelas, el riesgo orientativo de mildiu y otros riesgos, los grados-día (GDD), el balance hídrico y una ventana orientativa de vendimia.</p>
+        <p class="card-note">Utiliza datos de Open-Meteo, necesita conexión para actualizarse y fincas con contorno geográfico. Los indicadores orientan la planificación; no sustituyen el criterio técnico.</p>
+      </article>
+
+      <article class="card" id="informes">
+        <div class="card-top"><span class="no">10 / INFORMACIÓN</span><span class="pill limited">En ampliación</span></div>
+        <h3>Informes</h3>
+        <p>El catálogo reúne informes de vendimia, explotación, DO y cumplimiento, bodegas, economía y otras áreas. Permite generar y exportar las salidas que ya tienen su generador conectado.</p>
+        <p class="card-note">El catálogo contiene 58 fichas; 15 tienen generador implementado. Los demás informes se irán incorporando progresivamente.</p>
+      </article>
+    </div>
+  </section>
+
+  <section class="section" id="alcance">
+    <div class="section-head">
+      <h2>Qué tener en cuenta</h2>
+      <p class="section-lead">Un resumen de las condiciones y funciones que todavía conviene conocer antes de usar la herramienta en el día a día.</p>
+    </div>
+    <div class="summary">
+      <div class="summary-grid">
+        <div class="summary-item"><strong><span class="state-dot dot-green"></span>Disponible</strong><p>Gestión de fincas, Ficha 360º, producción registrada, estimación manual, análisis de suelo, auditoría DO y gabinete de facturas.</p></div>
+        <div class="summary-item"><strong><span class="state-dot dot-amber"></span>Con límites o requisitos</strong><p>La aplicación móvil, el clima, determinados flujos de edición, los indicadores gráficos y parte del catálogo de informes.</p></div>
+        <div class="summary-item"><strong><span class="state-dot dot-violet"></span>En desarrollo</strong><p>GeoCampo y la asignación o cambio de documentos directamente desde el Mapa Legal. No hay una pantalla de calendario general independiente en esta versión.</p></div>
+      </div>
+    </div>
+    <div class="note"><strong>Nota sobre el alcance:</strong> esta guía describe las capacidades funcionales conocidas de Gestión Vitícola; no implica que todas las funciones tengan el mismo grado de madurez. La disponibilidad concreta puede depender de la configuración de la explotación y de la conectividad.</div>
+  </section>
+</main>
+<footer class="wrap footer">
+  <span>Gestión Vitícola · Vineyard · Guía funcional pública</span>
+  <span><a href="../index.html">Landing</a> · <a href="https://github.com/luisrodriguezlopez96/Vineyard_Public" target="_blank" rel="noopener noreferrer">Repositorio público ↗</a> · <a href="https://linkedin.com/in/luisrodriguezlopez96" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a></span>
+</footer>
+</body>
+</html>
