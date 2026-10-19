@@ -4,8 +4,8 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="theme-color" content="#fdfbf7">
-<title>Gestión Vitícola — Fincas, vendimia y datos en una sola herramienta</title>
-<meta name="description" content="Gestión Vitícola: aplicación de escritorio y PWA móvil para organizar fincas, seguir campañas, registrar vendimia y analizar la explotación con datos locales.">
+<title>Gestión Vitícola — Tecnología con raíces</title>
+<meta name="description" content="Gestión Vitícola: ERP vitícola desarrollado desde las necesidades de una explotación familiar. Fincas, campañas, agronomía, vendimia móvil e informes.">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Gestión Vitícola — Una explotación, siempre a mano">
 <meta property="og:description" content="Escritorio + PWA móvil. Cartografía de fincas, campañas, agronomía e informes; con trabajo offline y datos locales.">
@@ -216,6 +216,23 @@ button, a { -webkit-tap-highlight-color: transparent; }
 .cta-copy h2 { font-family: Georgia, serif; font-size: clamp(33px,4vw,46px); font-weight: 500; letter-spacing: -.04em; line-height: 1.1; margin: 0 0 13px; }
 .cta-copy p { color: #d6c8c5; font-size: 12px; margin: 0; max-width: 580px; }
 .cta-panel .btn { position: relative; z-index: 1; flex-shrink: 0; background: #f6e7bb; color: var(--wine-dark); }
+.author-section { padding: 100px 0; background: var(--paper-warm); border-top: 1px solid var(--line); }
+.author-grid { display: grid; grid-template-columns: .82fr 1.18fr; gap: clamp(36px,6vw,82px); align-items: center; }
+.author-visual { position: relative; max-width: 430px; margin: 0 auto; }
+.author-photo-frame { position: relative; border-radius: 190px 190px 22px 22px; overflow: hidden; background: #e9e0d3; border: 1px solid #ded3c4; box-shadow: 0 22px 48px rgba(53,34,25,.12); }
+.author-photo { width: 100%; aspect-ratio: 3 / 4; object-fit: cover; object-position: 50% 30%; }
+.author-photo-caption { position: absolute; left: 18px; right: 18px; bottom: 18px; padding: 10px 13px; border: 1px solid rgba(255,255,255,.35); border-radius: 11px; color: white; background: rgba(55,20,27,.8); backdrop-filter: blur(8px); font-size: 10px; letter-spacing: .08em; text-transform: uppercase; }
+.author-copy h2 { font-family: Georgia, "Times New Roman", serif; font-size: clamp(37px,4.2vw,53px); line-height: 1.08; font-weight: 500; letter-spacing: -.05em; margin: 0 0 22px; }
+.author-copy h2 em { color: var(--wine); font-weight: 500; }
+.author-copy p { color: #615d56; max-width: 700px; font-size: 14px; line-height: 1.8; margin: 0 0 15px; }
+.author-quote { margin: 23px 0 24px; padding: 0 0 0 18px; border-left: 2px solid var(--gold); color: var(--wine-dark); font-family: Georgia, serif; font-size: 20px; line-height: 1.45; }
+.author-signature { font-size: 11px; font-weight: 800; letter-spacing: .08em; text-transform: uppercase; color: var(--wine); margin: 0 0 17px; }
+.author-links { display: flex; flex-wrap: wrap; gap: 10px; }
+.author-links a { display: inline-flex; align-items: center; gap: 7px; padding: 9px 13px; border: 1px solid #d9d0c5; border-radius: 999px; text-decoration: none; font-size: 11px; font-weight: 750; background: rgba(255,254,250,.65); }
+.author-links a:hover { color: var(--wine); border-color: var(--wine); }
+.cta-actions { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; position: relative; z-index: 1; flex-shrink: 0; }
+.cta-panel .btn.cta-guide { background: transparent; border: 1px solid rgba(255,255,255,.35); color: white; box-shadow: none; }
+.cta-panel .btn.cta-guide:hover { background: rgba(255,255,255,.08); }
 .footer { padding: 25px 0 34px; border-top: 1px solid var(--line); }
 .footer-row { display: flex; align-items: center; justify-content: space-between; gap: 22px; color: var(--muted); font-size: 10px; }
 .footer-row a { text-decoration: none; font-weight: 750; color: var(--wine); }
@@ -272,8 +289,13 @@ button, a { -webkit-tap-highlight-color: transparent; }
   .tech-grid { grid-template-columns: repeat(2,1fr); }
   .status-top { grid-template-columns: 1fr; gap: 23px; }
   .status-groups { grid-template-columns: 1fr; }
+  .author-section { padding: 66px 0; }
+  .author-grid { grid-template-columns: 1fr; gap: 34px; }
+  .author-visual { width: 100%; max-width: 360px; }
+  .author-copy p { font-size: 13px; }
   .cta-section { padding: 58px 0; }
   .cta-panel { align-items: flex-start; flex-direction: column; border-radius: 20px; }
+  .cta-actions { align-items: flex-start; }
   .footer-row { align-items: flex-start; flex-direction: column; gap: 8px; }
 }
 @media (max-width: 420px) {
@@ -313,6 +335,7 @@ button, a { -webkit-tap-highlight-color: transparent; }
       <a href="#capturas">Capturas</a>
       <a href="#arquitectura">Arquitectura</a>
       <a href="#estado">Estado real</a>
+      <a href="#origen">El origen</a>
       <a class="nav-cta" href="https://github.com/luisrodriguezlopez96/Vineyard_Public" target="_blank" rel="noopener">Ver en GitHub ↗</a>
     </nav>
   </div>
@@ -367,19 +390,19 @@ button, a { -webkit-tap-highlight-color: transparent; }
         <article class="feature">
           <div class="feature-top"><span class="feature-no">01 / TERRITORIO</span><span class="feature-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M3 6.5 9 3l6 3 6-3v14.5L15 21l-6-3-6 3V6.5Z"/><path d="M9 3v15m6-12v15"/></svg></span></div>
           <h3>Fincas y cartografía</h3>
-          <p>Organización por parcela, subparcela y finca; mapa, fichas, superficies, geometrías y búsquedas. Importación de recintos desde SIGPAC y contornos de Catastro.</p>
+          <p>Organización por parcela, subparcela y finca; mapa, superficies, geometrías e importación desde SIGPAC y Catastro. La Ficha 360º reúne producción, rendimiento, tratamientos, tareas y contexto agronómico.</p>
           <div class="inline-tags"><span>GIS</span><span>SIGPAC / FEGA</span><span>Catastro</span></div>
         </article>
         <article class="feature">
           <div class="feature-top"><span class="feature-no">02 / CAMPAÑAS</span><span class="feature-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M4 20V9m5 11V4m5 16v-7m5 7V7"/><path d="M2 20h20"/></svg></span></div>
           <h3>Producción anual</h3>
-          <p>Registros de kilos por campaña y subparcela, reparto proporcional por superficie e indicadores para comparar la producción con temporadas anteriores.</p>
+          <p>Producción anual, estimación manual de cosecha y reparto de kilos ponderado por superficie y edad de la viña. Indicadores y comparativas para revisar la evolución de las campañas.</p>
           <div class="inline-tags"><span>Histórico</span><span>Kg/ha</span><span>Comparativas</span></div>
         </article>
         <article class="feature">
           <div class="feature-top"><span class="feature-no">03 / AGRONOMÍA</span><span class="feature-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M20.5 3.5C12 3 5 6 4 13c-.5 3 1.5 5 4.5 4.5 7-1 10-8 12-14Z"/><path d="M3 21c3-6 7-9 13-12"/></svg></span></div>
           <h3>Suelo y nutrición</h3>
-          <p>Historial de análisis de suelo, radar frente a valores de referencia y registro o planificación de abonos con riqueza NPK y estado de aplicación.</p>
+          <p>Historial de análisis de suelo, comparación con referencias y plan de abonado con riqueza NPK. Los resultados ayudan a contextualizar el seguimiento agronómico de cada subparcela.</p>
           <div class="inline-tags"><span>Análisis</span><span>NPK</span><span>Plan de abonado</span></div>
         </article>
         <article class="feature">
@@ -391,14 +414,32 @@ button, a { -webkit-tap-highlight-color: transparent; }
         <article class="feature">
           <div class="feature-top"><span class="feature-no">05 / DECISIONES</span><span class="feature-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M3 3v18h18"/><path d="m6 15 4-5 4 3 5-7"/><path d="M15 6h4v4"/></svg></span></div>
           <h3>Informes y auditoría</h3>
-          <p>Evolución histórica, distribución por parcela, comparativas de cosecha y auditoría de rendimiento frente a los límites configurados de la DO Valdeorras.</p>
+          <p>Comparativas de campaña, producción y rendimiento por parcela, exportaciones PDF/HTML y auditoría DO Valdeorras. El catálogo de informes sigue en ampliación.</p>
           <div class="inline-tags"><span>PDF</span><span>HTML interactivo</span><span>DO Valdeorras</span></div>
         </article>
         <article class="feature">
           <div class="feature-top"><span class="feature-no">06 / CAMPO</span><span class="feature-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><rect x="6" y="2" width="12" height="20" rx="2"/><path d="M10 5h4m-3 14h2"/></svg></span></div>
           <h3>Vendimia desde el móvil</h3>
-          <p>Registro de pesadas con parcela, subparcela, kilos y grado estimado. La app móvil puede guardar registros offline y enviarlos al receptor local cuando vuelve la conexión.</p>
+          <p>Registro de pesadas, fecha, cajas, grado y bodega de destino. La cola móvil conserva registros sin conexión y los sincroniza al recuperar conectividad; después se revisan y consolidan desde el escritorio.</p>
           <div class="inline-tags"><span>PWA</span><span>Modo offline</span><span>Red local</span></div>
+        </article>
+        <article class="feature">
+          <div class="feature-top"><span class="feature-no">07 / BODEGAS</span><span class="feature-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M4 21V8l8-5 8 5v13Z"/><path d="M8 12h2m4 0h2M8 16h2m4 0h2M2 21h20"/></svg></span></div>
+          <h3>Bodegas y valoración</h3>
+          <p>Gestión de varias bodegas, tickets asociados al destino y condiciones comerciales por campaña. Calcula una valoración estimada a partir de kilos, precio, IVA y retención configurados; no genera liquidaciones ni facturas.</p>
+          <div class="inline-tags"><span>Multi-bodega</span><span>€/kg</span><span>Campañas</span></div>
+        </article>
+        <article class="feature">
+          <div class="feature-top"><span class="feature-no">08 / CLIMA</span><span class="feature-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M7 18a4 4 0 0 1 .6-8A6 6 0 0 1 19 12a3 3 0 0 1-1 6Z"/><path d="m9 21 2-3m3 3 2-3"/></svg></span></div>
+          <h3>Clima y seguimiento agronómico</h3>
+          <p>Previsión e histórico meteorológico, riesgo orientativo de mildiu, grados-día, balance hídrico y ventanas de vendimia. Utiliza Open-Meteo y necesita conexión para renovar datos y fincas con geometría.</p>
+          <div class="inline-tags"><span>Open-Meteo</span><span>GDD</span><span>Alertas orientativas</span></div>
+        </article>
+        <article class="feature">
+          <div class="feature-top"><span class="feature-no">09 / LABORES</span><span class="feature-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M14 4 20 10M5 19l9-9m-6 1-3-3 3-3 3 3M14 4l3-3 4 4-3 3"/><path d="M3 21h7"/></svg></span></div>
+          <h3>Tratamientos y tareas</h3>
+          <p>Cuaderno de tratamientos fitosanitarios, planificación de labores y registro de tareas por subparcela. Algunas operaciones de edición conservan limitaciones documentadas en el manual.</p>
+          <div class="inline-tags"><span>Cuaderno de campo</span><span>Plazos de seguridad</span><span>Labores</span></div>
         </article>
       </div>
     </div>
@@ -488,29 +529,55 @@ button, a { -webkit-tap-highlight-color: transparent; }
   <section class="status-section" id="estado">
     <div class="wrap">
       <div class="status-top">
-        <div class="status-heading"><p class="eyebrow">Estado del desarrollo</p><h2>Transparencia sobre lo que ya es real.</h2><p>El proyecto está en evolución. Estas notas distinguen las pantallas conectadas a datos reales de los módulos cuyo trabajo sigue pendiente, según el manual de usuario.</p></div>
+        <div class="status-heading"><p class="eyebrow">Estado del desarrollo</p><h2>Transparencia sobre lo que ya es real.</h2><p>Estado resumido según el manual de usuario revisado en octubre de 2026. Se distinguen las funciones operativas de las parciales y de las que aún no están disponibles.</p></div>
         <div>
           <div class="status-groups">
             <article class="status-card">
               <h3>Implementado y conectado</h3>
               <div class="status-list">
-                <div class="status-item"><strong>Gestión de fincas</strong><p>CRUD, mapa e importación de geometrías de SIGPAC/Catastro.</p><span class="status-pill pill-live">OPERATIVO</span></div>
-                <div class="status-item"><strong>Producción y agronomía</strong><p>Campañas, reparto proporcional, análisis de suelo y plan de abonado.</p><span class="status-pill pill-live">OPERATIVO</span></div>
-                <div class="status-item"><strong>Documentación e informes</strong><p>Gabinete de facturas, análisis productivo, auditoría DO y exportaciones PDF/HTML.</p><span class="status-pill pill-live">OPERATIVO</span></div>
-                <div class="status-item"><strong>Recepción de vendimia</strong><p>Recepción y consolidación de pesadas con la app de escritorio abierta en la red local.</p><span class="status-pill pill-live">OPERATIVO CON CONDICIONES</span></div>
+                <div class="status-item"><strong>Fincas y Ficha 360º</strong><p>Gestión territorial, geometrías y resumen integrado por subparcela.</p><span class="status-pill pill-live">OPERATIVO</span></div>
+                <div class="status-item"><strong>Producción, estimación y agronomía</strong><p>Campañas, estimación manual, reparto proporcional, análisis de suelo y abonado.</p><span class="status-pill pill-live">OPERATIVO</span></div>
+                <div class="status-item"><strong>Tratamientos y tareas de campo</strong><p>Conectados a datos reales; se mantienen limitaciones de edición en algunos flujos.</p><span class="status-pill pill-live">OPERATIVO CON LIMITACIONES</span></div>
+                <div class="status-item"><strong>Vendimia y bodegas</strong><p>Recepción y consolidación de pesadas, varias bodegas y valoración comercial estimada.</p><span class="status-pill pill-live">OPERATIVO CON CONDICIONES</span></div>
+                <div class="status-item"><strong>Auditoría DO y gabinete de facturas</strong><p>Importación de Hoja DO/RVG, auditoría cruzada y gestión documental de facturas.</p><span class="status-pill pill-live">OPERATIVO</span></div>
               </div>
             </article>
             <article class="status-card pending">
               <h3>En evolución / pendiente</h3>
               <div class="status-list">
-                <div class="status-item"><strong>Tareas de campo</strong><p>La pantalla muestra datos de ejemplo; aún falta conectarla por completo a datos reales.</p><span class="status-pill pill-progress">MAQUETA</span></div>
-                <div class="status-item"><strong>Pestaña Tratamientos</strong><p>La vista es demostrativa. El alta real de abonos se realiza desde Agronomía.</p><span class="status-pill pill-progress">MAQUETA</span></div>
-                <div class="status-item"><strong>Calendario y documentos legales</strong><p>El acceso a Calendario está pendiente y la asignación/cambio de documentos sigue en desarrollo.</p><span class="status-pill pill-progress">PENDIENTE</span></div>
-                <div class="status-item"><strong>Alertas agronómicas</strong><p>El tiempo actual es básico; el riesgo de mildiu/oídio y el cálculo de grados-día están pendientes.</p><span class="status-pill pill-progress">PENDIENTE</span></div>
+                <div class="status-item"><strong>Catálogo de informes</strong><p>El manual registra 15 fichas con generador de 58 disponibles; otras salidas siguen en desarrollo.</p><span class="status-pill pill-progress">PARCIAL</span></div>
+                <div class="status-item"><strong>Análisis gráfico</strong><p>Funciona, pero mantiene límites de rendimiento fijos y la exportación HTML no respeta el modo discreto.</p><span class="status-pill pill-progress">CON LIMITACIONES</span></div>
+                <div class="status-item"><strong>Asignar o cambiar documentos legales</strong><p>El mapa es de consulta; la asociación de documentos desde esa vista aún no está implementada.</p><span class="status-pill pill-progress">EN DESARROLLO</span></div>
+                <div class="status-item"><strong>Calendario general</strong><p>No existe como pantalla independiente en la versión documentada.</p><span class="status-pill pill-progress">NO DISPONIBLE</span></div>
+                <div class="status-item"><strong>Edición de tareas</strong><p>Hay un error conocido: el cambio de subparcela no se guarda al editar una tarea.</p><span class="status-pill pill-progress">ERROR CONOCIDO</span></div>
               </div>
             </article>
           </div>
-          <div class="notice"><span class="notice-mark" aria-hidden="true">ⓘ</span><p><strong>Condición de la conexión móvil de vendimia:</strong> la configuración documentada requiere que el PC tenga Vineyard abierto y que móvil y PC compartan la red local. El acceso seguro mediante HTTPS para iPhone figura todavía como tarea de configuración pendiente en el manual.</p></div>
+          <div class="notice"><span class="notice-mark" aria-hidden="true">ⓘ</span><p><strong>Condiciones del uso móvil:</strong> el PC de bodega debe tener Gestión Vitícola abierto y móvil y PC deben poder conectarse entre sí. La conexión HTTP de red local permite el intercambio básico; la instalación de la PWA y el uso preparado sin cobertura requieren HTTPS. La configuración de ese acceso depende del equipo donde se despliega.</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="author-section" id="origen">
+    <div class="wrap author-grid">
+      <div class="author-visual">
+        <div class="author-photo-frame">
+          <img class="author-photo" src="assets/EntreVinhas.jpeg" alt="Foto personal en un viñedo familiar" loading="lazy">
+          <span class="author-photo-caption">Tecnología con raíces</span>
+        </div>
+      </div>
+      <div class="author-copy">
+        <p class="eyebrow">El origen del proyecto</p>
+        <h2>Una herramienta hecha desde dentro del viñedo. <em>Con tecnología y raíces.</em></h2>
+        <p>Llevo años viendo trabajar el viñedo en mi familia. Para mí, además de formar parte de nuestras raíces, es una de las mejores formas de desconectar de la oficina y volver a lo esencial.</p>
+        <p>Cuanto más lo conozco, más pienso en cómo mejorarlo. Mi formación como ingeniero —centrada en sistemas, procesos y resultados medibles— y mi especialización en Data Science me llevaron a unir dos mundos: la tecnología y la viticultura.</p>
+        <p>De esa idea nació <strong>Gestión Vitícola</strong>: un ERP desarrollado desde las necesidades reales de una explotación familiar, pensado para ayudar al pequeño viticultor a organizar el trabajo, entender mejor sus datos y tomar decisiones con más información.</p>
+        <blockquote class="author-quote">«Una herramienta hecha desde dentro del viñedo, con mentalidad de ingeniero y los pies en la tierra.»</blockquote>
+        <div class="author-signature">Luis Rodríguez López · Ingeniería y tecnología aplicada al viñedo</div>
+        <div class="author-links">
+          <a href="https://linkedin.com/in/luisrodriguezlopez96" target="_blank" rel="noopener">LinkedIn ↗</a>
+          <a href="https://github.com/luisrodriguezlopez96" target="_blank" rel="noopener">GitHub ↗</a>
         </div>
       </div>
     </div>
@@ -520,7 +587,7 @@ button, a { -webkit-tap-highlight-color: transparent; }
     <div class="wrap">
       <div class="cta-panel">
         <div class="cta-copy"><p class="eyebrow">Proyecto en desarrollo</p><h2>Construido desde las necesidades reales de una explotación.</h2><p>Gestión Vitícola reúne cartografía, campañas, agronomía y análisis en una solución propia que continúa evolucionando a partir del uso y de las necesidades del viñedo.</p></div>
-        <a class="btn" href="https://github.com/luisrodriguezlopez96/Vineyard_Public" target="_blank" rel="noopener">Explorar el repositorio ↗</a>
+        <div class="cta-actions"><a class="btn" href="https://github.com/luisrodriguezlopez96/Vineyard_Public" target="_blank" rel="noopener">Explorar el repositorio ↗</a><a class="btn cta-guide" href="docs/guia-funcional.html">Guía funcional ↗</a></div>
       </div>
     </div>
   </section>
@@ -529,7 +596,7 @@ button, a { -webkit-tap-highlight-color: transparent; }
 <footer class="footer">
   <div class="wrap footer-row">
     <span>Gestión Vitícola · Vineyard · Viñedos Rodríguez López</span>
-    <span>Presentación pública del proyecto · <a href="https://github.com/luisrodriguezlopez96/Vineyard_Public" target="_blank" rel="noopener">GitHub ↗</a></span>
+    <span><a href="docs/guia-funcional.html">Guía funcional ↗</a> · <a href="https://linkedin.com/in/luisrodriguezlopez96" target="_blank" rel="noopener">LinkedIn ↗</a> · <a href="https://github.com/luisrodriguezlopez96/Vineyard_Public" target="_blank" rel="noopener">GitHub ↗</a></span>
   </div>
 </footer>
 </body>
