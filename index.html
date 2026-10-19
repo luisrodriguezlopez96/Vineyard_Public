@@ -341,6 +341,30 @@ button, a { -webkit-tap-highlight-color: transparent; }
   .flow-icon { margin:13px 0 9px; }
   .flow-foot { font-size:12px; }
 }
+/* Estado funcional: catálogo de capacidades en lugar de un panel de incidencias */
+.capability-status-grid { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:15px; align-items:stretch; }
+.capability-status-card { min-width:0; display:flex; flex-direction:column; gap:0; padding:23px 23px 22px; border:1px solid var(--line); border-radius:17px; background:var(--paper); }
+.capability-status-top { display:flex; align-items:flex-start; justify-content:space-between; gap:12px; margin-bottom:17px; }
+.capability-number { color:var(--wine); font-size:10px; line-height:1.5; font-weight:850; letter-spacing:.09em; }
+.capability-badge { flex:0 0 auto; display:inline-block; max-width:58%; border-radius:999px; padding:5px 9px; font-size:10px; line-height:1.35; font-weight:800; text-align:center; }
+.badge-available { background:#e8f5ec; color:#226647; }
+.badge-limited, .badge-conditions { background:#fff2d8; color:#865a0c; }
+.badge-development { background:#eeeaf7; color:#62508a; }
+.capability-status-card h3 { margin:0 0 10px; font-size:22px; line-height:1.2; font-weight:550; }
+.capability-status-card p { margin:0; color:#615d56; font-size:15px; line-height:1.7; }
+.capability-future { background:#fbf9fe; border-style:dashed; }
+@media (max-width: 1050px) {
+  .capability-status-grid { grid-template-columns:repeat(2,minmax(0,1fr)); }
+}
+@media (max-width: 650px) {
+  .capability-status-grid { grid-template-columns:1fr; gap:12px; }
+  .capability-status-card { padding:20px; }
+  .capability-status-top { margin-bottom:13px; }
+  .capability-status-card h3 { font-size:21px; }
+  .capability-status-card p { font-size:15px; }
+  .capability-badge { max-width:60%; font-size:10px; }
+}
+
 </style>
 </head>
 <body>
@@ -561,36 +585,76 @@ button, a { -webkit-tap-highlight-color: transparent; }
     </div>
   </section>
 
-  <section class="status-section" id="estado">
+  <section class="section section-soft" id="estado">
     <div class="wrap">
-      <div class="status-top">
-        <div class="status-heading"><p class="eyebrow">Estado del desarrollo</p><h2>Transparencia sobre lo que ya es real.</h2><p>Resumen de capacidades y limitaciones según el manual de usuario revisado en octubre de 2026. El proyecto sigue evolucionando; el grado de madurez de cada módulo importa tanto como su funcionalidad.</p></div>
+      <div class="section-head">
         <div>
-          <div class="status-groups">
-            <article class="status-card">
-              <h3>Operativo y conectado</h3>
-              <div class="status-list">
-                <div class="status-item"><strong>Fincas y Ficha 360º</strong><p>Gestión territorial, geometrías y resumen integrado por subparcela.</p><span class="status-pill pill-live">OPERATIVO</span></div>
-                <div class="status-item"><strong>Producción, estimación y agronomía</strong><p>Producción registrada, estimación manual, reparto proporcional, análisis de suelo y plan de abonado.</p><span class="status-pill pill-live">OPERATIVO</span></div>
-                <div class="status-item"><strong>Tratamientos y tareas</strong><p>Conectados a datos reales, con limitaciones documentadas en ciertos flujos de edición.</p><span class="status-pill pill-live">OPERATIVO CON LIMITACIONES</span></div>
-                <div class="status-item"><strong>Vendimia y bodegas</strong><p>Recepción y consolidación de pesadas, condiciones por campaña y valoración comercial estimada.</p><span class="status-pill pill-live">OPERATIVO CON CONDICIONES</span></div>
-                <div class="status-item"><strong>Auditoría DO y gabinete de facturas</strong><p>Importación de Hoja DO/RVG, auditoría cruzada y gestión documental de facturas.</p><span class="status-pill pill-live">OPERATIVO</span></div>
-              </div>
-            </article>
-            <article class="status-card pending">
-              <h3>Parcial, condicionado o pendiente</h3>
-              <div class="status-list">
-                <div class="status-item"><strong>Catálogo de informes</strong><p>15 de las 58 fichas tienen generador conectado según el manual; el resto sigue pendiente.</p><span class="status-pill pill-progress">PARCIAL</span></div>
-                <div class="status-item"><strong>Análisis gráfico</strong><p>El umbral mostrado de 12.000 kg/ha es fijo; el margen utilizable se calcula sobre 7.000 y no debe usarse para control legal.</p><span class="status-pill pill-progress">CON LIMITACIONES</span></div>
-                <div class="status-item"><strong>Edición de tareas</strong><p>El cambio de subparcela no se guarda al editar una tarea; otro posible fallo con tareas que empiezan hoy está pendiente de reproducir.</p><span class="status-pill pill-progress">ERROR CONOCIDO</span></div>
-                <div class="status-item"><strong>Mapa Legal y documentos</strong><p>El mapa permite consultar y abrir documentos; asignarlos o cambiarlos desde esa vista está en desarrollo.</p><span class="status-pill pill-progress">EN DESARROLLO</span></div>
-                <div class="status-item"><strong>Calendario general</strong><p>No existe como pantalla independiente en la versión documentada.</p><span class="status-pill pill-progress">NO DISPONIBLE</span></div>
-              </div>
-            </article>
-          </div>
-          <div class="notice"><span class="notice-mark" aria-hidden="true">ⓘ</span><p><strong>Condiciones del uso móvil y del clima:</strong> para sincronizar, el PC de bodega debe tener Gestión Vitícola abierto y ambos dispositivos deben poder comunicarse. Instalar la PWA y preparar su uso sin cobertura requiere HTTPS. La consulta o renovación meteorológica necesita conexión e información geográfica de las fincas; sus indicadores son orientativos.</p></div>
-          <div class="notice notice-sensitive"><span class="notice-mark" aria-hidden="true">!</span><p><strong>Antes de compartir informes HTML:</strong> según el manual, la exportación HTML del Análisis Gráfico no respeta el modo discreto y puede incluir los kilos reales. Si necesitas ocultarlos, no compartas ese HTML; utiliza la exportación PDF, que sí respeta el modo discreto.</p></div>
+          <p class="eyebrow">Funciones y alcance</p>
+          <h2>Qué puedes hacer con Gestión Vitícola.<br><em>Y qué está por llegar.</em></h2>
         </div>
+        <p class="section-lead">Una guía práctica de las funciones disponibles, las que tienen limitaciones conocidas y las que están en desarrollo.</p>
+      </div>
+
+      <div class="capability-status-grid">
+        <article class="capability-status-card">
+          <div class="capability-status-top"><span class="capability-number">01 / TERRITORIO</span><span class="capability-badge badge-available">Disponible</span></div>
+          <h3>Fincas y Ficha 360º</h3>
+          <p>Consulta la superficie, inclinación, año de plantación, cosechas y demás datos de cada parcela. Visualiza su ubicación en el mapa y utiliza la posición del móvil para orientarte en el terreno.</p>
+        </article>
+
+        <article class="capability-status-card">
+          <div class="capability-status-top"><span class="capability-number">02 / CAMPAÑAS</span><span class="capability-badge badge-available">Disponible</span></div>
+          <h3>Producción, estimación y agronomía</h3>
+          <p>Registra la producción por campaña y subparcela, crea estimaciones de cosecha y compara resultados. Guarda análisis de suelo para estudiar su evolución y planificar el abonado. Las estimaciones actuales se introducen manualmente.</p>
+        </article>
+
+        <article class="capability-status-card">
+          <div class="capability-status-top"><span class="capability-number">03 / TRABAJO DE CAMPO</span><span class="capability-badge badge-limited">Con limitaciones</span></div>
+          <h3>Tratamientos y tareas</h3>
+          <p>Registra tratamientos fitosanitarios y labores por parcela para mantener un historial de los trabajos, revisar qué se ha realizado y disponer de datos para estudiar los costes. Algunas operaciones de edición siguen teniendo limitaciones conocidas.</p>
+        </article>
+
+        <article class="capability-status-card">
+          <div class="capability-status-top"><span class="capability-number">04 / VENDIMIA</span><span class="capability-badge badge-conditions">Disponible con condiciones</span></div>
+          <h3>Vendimia y bodegas</h3>
+          <p>Registra pesadas desde el móvil y organiza las entregas por día, kilos, cajas, grado y bodega de destino. Consulta resúmenes de recepción y condiciones por campaña; la valoración económica de las entregas es estimada.</p>
+        </article>
+
+        <article class="capability-status-card">
+          <div class="capability-status-top"><span class="capability-number">05 / CONTROL Y ECONOMÍA</span><span class="capability-badge badge-available">Disponible</span></div>
+          <h3>Auditoría DO y facturas</h3>
+          <p>Importa la Hoja DO y el RVG para contrastar datos y revisar los rendimientos según los límites configurados. Guarda facturas vinculadas a campañas y parcelas para analizar gastos o localizar un documento rápidamente.</p>
+        </article>
+
+        <article class="capability-status-card">
+          <div class="capability-status-top"><span class="capability-number">06 / ANÁLISIS</span><span class="capability-badge badge-limited">Disponible con limitaciones</span></div>
+          <h3>Análisis gráfico</h3>
+          <p>Explora estadísticas de producción por campaña, compara parcelas y estudia la evolución histórica del rendimiento. Algunos indicadores tienen limitaciones conocidas, por lo que conviene interpretar sus resultados teniendo en cuenta esos límites.</p>
+        </article>
+
+        <article class="capability-status-card">
+          <div class="capability-status-top"><span class="capability-number">07 / DOCUMENTACIÓN</span><span class="capability-badge badge-limited">Consulta disponible</span></div>
+          <h3>Documentos de las parcelas</h3>
+          <p>Consulta y abre la documentación vinculada a las fincas, incluidos documentos legales de la propiedad. La asignación o el cambio de documentos directamente desde el Mapa Legal todavía está en desarrollo.</p>
+        </article>
+
+        <article class="capability-status-card capability-future">
+          <div class="capability-status-top"><span class="capability-number">08 / INCIDENCIAS EN CAMPO</span><span class="capability-badge badge-development">En desarrollo</span></div>
+          <h3>GeoCampo</h3>
+          <p>La idea es poder marcar una incidencia desde el terreno —por ejemplo, un alambre roto o una cepa muerta— guardando su ubicación y una nota para volver a encontrarla y planificar su reparación o replantación.</p>
+        </article>
+
+        <article class="capability-status-card">
+          <div class="capability-status-top"><span class="capability-number">09 / METEOROLOGÍA</span><span class="capability-badge badge-conditions">Disponible con condiciones</span></div>
+          <h3>Clima</h3>
+          <p>Consulta la previsión por parcela, el riesgo orientativo de mildiu y otros riesgos, los grados-día (GDD) y el balance hídrico. Requiere conexión y fincas con contorno; en el futuro podría ampliarse con avisos más específicos de heladas o enfermedades.</p>
+        </article>
+
+        <article class="capability-status-card capability-future">
+          <div class="capability-status-top"><span class="capability-number">10 / EXPLOTACIÓN</span><span class="capability-badge badge-development">En ampliación</span></div>
+          <h3>Informes</h3>
+          <p>La aplicación ya permite generar algunos informes, pero el catálogo continúa creciendo: actualmente 15 de las 58 fichas tienen generador. El objetivo es facilitar la extracción de información productiva, agronómica y económica para comparar campañas y apoyar decisiones.</p>
+        </article>
       </div>
     </div>
   </section>
