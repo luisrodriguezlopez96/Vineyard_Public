@@ -4,11 +4,11 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="theme-color" content="#fdfbf7">
-<title>Gestión Vitícola — Tecnología con raíces</title>
-<meta name="description" content="Gestión Vitícola: ERP vitícola desarrollado desde las necesidades de una explotación familiar. Fincas, campañas, agronomía, vendimia móvil e informes.">
+<title>Gestión Vitícola — Herramienta de gestión vitícola</title>
+<meta name="description" content="Gestión Vitícola es una herramienta de gestión vitícola desarrollada desde las necesidades reales de una explotación familiar: fincas, campañas, agronomía, vendimia e informes.">
 <meta property="og:type" content="website">
-<meta property="og:title" content="Gestión Vitícola — Una explotación, siempre a mano">
-<meta property="og:description" content="Escritorio + PWA móvil. Cartografía de fincas, campañas, agronomía e informes; con trabajo offline y datos locales.">
+<meta property="og:title" content="Gestión Vitícola — Herramienta de gestión vitícola">
+<meta property="og:description" content="Cartografía, campañas, agronomía, vendimia móvil y documentación. Gestión local y registro de campo con condiciones de conectividad claras.">
 <meta property="og:image" content="https://luisrodriguezlopez96.github.io/Vineyard_Public/assets/vista_gestion_fincas.png">
 <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
 <style>
@@ -313,6 +313,29 @@ button, a { -webkit-tap-highlight-color: transparent; }
   html { scroll-behavior: auto; }
   *, *::before, *::after { transition-duration: .01ms !important; animation-duration: .01ms !important; }
 }
+.flow-grid { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:15px; }
+.flow-step { min-width:0; padding:23px 24px; border:1px solid rgba(255,255,255,.16); border-radius:16px; background:rgba(255,255,255,.045); }
+.flow-num { display:block; font-size:10px; color:#ddc37c; letter-spacing:.1em; font-weight:850; }
+.flow-icon { font-size:26px; margin:18px 0 13px; color:#ddc37c; }
+.flow-step h3 { font-family:Georgia,serif; font-size:22px; font-weight:500; margin:0 0 8px; }
+.flow-step p { font-size:12px; line-height:1.7; color:#d6c8c5; margin:0; }
+.flow-foot { max-width:950px; margin:22px 0 0; font-size:12px; line-height:1.7; color:#d6c8c5; }
+.flow-foot strong { color:#f5e4b5; }
+.notice-sensitive { background:#f9eeee; border-color:#ead0d3; }
+.notice-sensitive p { color:#702632; }
+.notice-sensitive strong { color:#5b1720; }
+.architecture-frame a { display:block; }
+.architecture-frame a:focus-visible { outline:3px solid var(--wine); outline-offset:4px; border-radius:10px; }
+.btn:focus-visible, .nav-links a:focus-visible, .author-links a:focus-visible, .footer a:focus-visible { outline:3px solid var(--gold); outline-offset:3px; }
+.shot-caption p { font-size:12px; }
+.metric span { font-size:12px; line-height:1.5; }
+.tech-card p, .status-item p, .architecture-note span { font-size:12px; }
+@media (max-width: 760px) {
+  .flow-grid { grid-template-columns:1fr; }
+  .flow-step { padding:20px; }
+  .flow-icon { margin:13px 0 9px; }
+  .flow-foot { font-size:12px; }
+}
 </style>
 </head>
 <body>
@@ -331,7 +354,8 @@ button, a { -webkit-tap-highlight-color: transparent; }
       <span><span class="brand-name">Gestión Vitícola</span><span class="brand-sub">Viñedos Rodríguez López · Vineyard</span></span>
     </a>
     <nav class="nav-links" aria-label="Navegación principal">
-      <a href="#capacidades">Capacidades</a>
+      <a href="#capacidades">Funciones</a>
+      <a href="#campo">Vendimia móvil</a>
       <a href="#capturas">Capturas</a>
       <a href="#arquitectura">Arquitectura</a>
       <a href="#estado">Estado real</a>
@@ -345,16 +369,16 @@ button, a { -webkit-tap-highlight-color: transparent; }
   <section class="hero">
     <div class="wrap hero-grid">
       <div class="hero-copy-block">
-        <p class="eyebrow">Una herramienta nacida en la explotación</p>
+        <p class="eyebrow">Herramienta de gestión vitícola para la explotación familiar</p>
         <h1>El viñedo se gestiona en el campo. <em>Los datos, también.</em></h1>
-        <p class="hero-copy">Una aplicación híbrida para tener juntas la cartografía de las fincas, la evolución de cada campaña, la agronomía y los informes. El escritorio es el núcleo de gestión; la PWA móvil acerca los datos al trabajo diario.</p>
+        <p class="hero-copy">Gestión Vitícola reúne cartografía, campañas, agronomía, vendimia y documentación en una herramienta propia, desarrollada desde las necesidades reales de una explotación familiar. Está pensada para ayudar al pequeño viticultor a ordenar la información y consultar los datos de su explotación con contexto.</p>
         <div class="actions">
-          <a class="btn btn-primary" href="#capacidades">Explorar la herramienta <span aria-hidden="true">↓</span></a>
-          <a class="btn btn-secondary" href="#arquitectura">Ver cómo está construida ↗</a>
+          <a class="btn btn-primary" href="#capacidades">Ver qué puedo gestionar <span aria-hidden="true">↓</span></a>
+          <a class="btn btn-secondary" href="#arquitectura">Entender la arquitectura ↗</a>
         </div>
-        <div class="proof-line" aria-label="Características de la herramienta">
-          <span><i></i> Aplicación de escritorio</span>
-          <span><i></i> PWA móvil</span>
+        <div class="proof-line" aria-label="Principios de la herramienta">
+          <span><i></i> Gestión desde el escritorio</span>
+          <span><i></i> Registro móvil</span>
           <span><i></i> Datos locales</span>
         </div>
       </div>
@@ -364,19 +388,19 @@ button, a { -webkit-tap-highlight-color: transparent; }
             <span class="window-dot"></span><span class="window-dot"></span><span class="window-dot"></span>
             <span class="window-caption">Gestión de fincas · Captura real</span>
           </div>
-          <img class="hero-shot" src="assets/vista_gestion_fincas.png" alt="Captura real de Gestión Vitícola con el mapa y la gestión de fincas" fetchpriority="high">
+          <img class="hero-shot" src="assets/vista_gestion_fincas.png" alt="Captura real de Gestión Vitícola con mapa y estructura de fincas y subparcelas" fetchpriority="high">
         </div>
         <div class="art-note"><strong>De la finca al informe</strong><span>Cartografía, campañas y registros en un mismo flujo de trabajo.</span></div>
       </div>
     </div>
   </section>
 
-  <section class="metrics" aria-label="Resumen de la arquitectura">
+  <section class="metrics" aria-label="Principios de diseño">
     <div class="wrap metrics-row">
-      <div class="metric"><b>Escritorio + móvil</b><span>Dos interfaces coordinadas</span></div>
-      <div class="metric"><b>SQLite local</b><span>La base de datos de la explotación</span></div>
-      <div class="metric"><b>Offline-first</b><span>Captura de datos sin cobertura</span></div>
-      <div class="metric"><b>GIS y campañas</b><span>Del recinto al histórico productivo</span></div>
+      <div class="metric"><b>Escritorio como núcleo</b><span>La gestión principal se organiza desde la aplicación de escritorio.</span></div>
+      <div class="metric"><b>SQLite local</b><span>Base de datos local para la información de la explotación.</span></div>
+      <div class="metric"><b>Registro móvil</b><span>Cola local y sincronización al recuperar conexión.</span></div>
+      <div class="metric"><b>Territorio + campañas</b><span>Información espacial y productiva relacionada.</span></div>
     </div>
   </section>
 
@@ -384,114 +408,120 @@ button, a { -webkit-tap-highlight-color: transparent; }
     <div class="wrap">
       <div class="section-head">
         <div><p class="eyebrow">Una visión de conjunto</p><h2>Todo lo importante del viñedo.<br><em>En el mismo lugar.</em></h2></div>
-        <p class="section-lead">La gestión diaria combina información territorial, producción, decisiones agronómicas y documentación económica para consultar los datos con contexto.</p>
+        <p class="section-lead">Un sistema que reúne territorio, producción, trabajo de campo y documentación. No todas las funciones tienen el mismo grado de madurez: aquí distinguimos sus capacidades y sus límites.</p>
       </div>
       <div class="feature-grid">
         <article class="feature">
           <div class="feature-top"><span class="feature-no">01 / TERRITORIO</span><span class="feature-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M3 6.5 9 3l6 3 6-3v14.5L15 21l-6-3-6 3V6.5Z"/><path d="M9 3v15m6-12v15"/></svg></span></div>
-          <h3>Fincas y cartografía</h3>
-          <p>Organización por parcela, subparcela y finca; mapa, superficies, geometrías e importación desde SIGPAC y Catastro. La Ficha 360º reúne producción, rendimiento, tratamientos, tareas y contexto agronómico.</p>
+          <h3>Fincas y Ficha 360º</h3>
+          <p>Parcelas, subparcelas, superficies y geometrías con integración de SIGPAC y Catastro. La Ficha 360º reúne producción, rendimiento, coste, tratamientos, tareas y contexto agronómico.</p>
           <div class="inline-tags"><span>GIS</span><span>SIGPAC / FEGA</span><span>Catastro</span></div>
         </article>
         <article class="feature">
           <div class="feature-top"><span class="feature-no">02 / CAMPAÑAS</span><span class="feature-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M4 20V9m5 11V4m5 16v-7m5 7V7"/><path d="M2 20h20"/></svg></span></div>
-          <h3>Producción anual</h3>
-          <p>Producción anual, estimación manual de cosecha y reparto de kilos ponderado por superficie y edad de la viña. Indicadores y comparativas para revisar la evolución de las campañas.</p>
-          <div class="inline-tags"><span>Histórico</span><span>Kg/ha</span><span>Comparativas</span></div>
+          <h3>Producción y estimación</h3>
+          <p>Histórico productivo, registro de kilos por subparcela, reparto ponderado por superficie y edad de la viña y estimación de cosecha introducida manualmente.</p>
+          <div class="inline-tags"><span>Campañas</span><span>Kg/ha</span><span>Comparativas</span></div>
         </article>
         <article class="feature">
           <div class="feature-top"><span class="feature-no">03 / AGRONOMÍA</span><span class="feature-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M20.5 3.5C12 3 5 6 4 13c-.5 3 1.5 5 4.5 4.5 7-1 10-8 12-14Z"/><path d="M3 21c3-6 7-9 13-12"/></svg></span></div>
           <h3>Suelo y nutrición</h3>
-          <p>Historial de análisis de suelo, comparación con referencias y plan de abonado con riqueza NPK. Los resultados ayudan a contextualizar el seguimiento agronómico de cada subparcela.</p>
-          <div class="inline-tags"><span>Análisis</span><span>NPK</span><span>Plan de abonado</span></div>
+          <p>Historial de análisis de suelo, comparación con valores de referencia y plan de abonado con riqueza NPK por subparcela.</p>
+          <div class="inline-tags"><span>Análisis de suelo</span><span>NPK</span><span>Plan de abonado</span></div>
         </article>
         <article class="feature">
-          <div class="feature-top"><span class="feature-no">04 / DOCUMENTOS</span><span class="feature-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M6 3h8l4 4v14H6z"/><path d="M14 3v5h5M9 13h6M9 17h6"/></svg></span></div>
-          <h3>Facturas y archivos</h3>
-          <p>Gabinete de facturas con proveedor, campaña, concepto, importes, PDF asociado y parcelas vinculadas para consultar el gasto con contexto.</p>
-          <div class="inline-tags"><span>PDF</span><span>Campañas</span><span>Parcelas</span></div>
+          <div class="feature-top"><span class="feature-no">04 / TRABAJO DE CAMPO</span><span class="feature-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M14 4 20 10M5 19l9-9m-6 1-3-3 3-3 3 3M14 4l3-3 4 4-3 3"/><path d="M3 21h7"/></svg></span></div>
+          <h3>Tratamientos y tareas</h3>
+          <p>Cuaderno de tratamientos fitosanitarios, plazos de seguridad y seguimiento de labores. Algunas operaciones de edición conservan limitaciones conocidas.</p>
+          <div class="inline-tags"><span>Cuaderno de campo</span><span>Plazos de seguridad</span></div>
         </article>
         <article class="feature">
-          <div class="feature-top"><span class="feature-no">05 / DECISIONES</span><span class="feature-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M3 3v18h18"/><path d="m6 15 4-5 4 3 5-7"/><path d="M15 6h4v4"/></svg></span></div>
-          <h3>Informes y auditoría</h3>
-          <p>Comparativas de campaña, producción y rendimiento por parcela, exportaciones PDF/HTML y auditoría DO Valdeorras. El catálogo de informes sigue en ampliación.</p>
-          <div class="inline-tags"><span>PDF</span><span>HTML interactivo</span><span>DO Valdeorras</span></div>
+          <div class="feature-top"><span class="feature-no">05 / METEOROLOGÍA</span><span class="feature-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M7 18a4 4 0 0 1 .6-8A6 6 0 0 1 19 12a3 3 0 0 1-1 6Z"/><path d="m9 21 2-3m3 3 2-3"/></svg></span></div>
+          <h3>Clima y seguimiento</h3>
+          <p>Previsión e histórico de Open-Meteo, riesgo orientativo de mildiu, grados-día, balance hídrico y una ventana orientativa de vendimia. Requiere fincas con geometría y conexión para renovar los datos.</p>
+          <div class="inline-tags"><span>Open-Meteo</span><span>GDD</span><span>Indicadores orientativos</span></div>
         </article>
         <article class="feature">
-          <div class="feature-top"><span class="feature-no">06 / CAMPO</span><span class="feature-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><rect x="6" y="2" width="12" height="20" rx="2"/><path d="M10 5h4m-3 14h2"/></svg></span></div>
-          <h3>Vendimia desde el móvil</h3>
-          <p>Registro de pesadas, fecha, cajas, grado y bodega de destino. La cola móvil conserva registros sin conexión y los sincroniza al recuperar conectividad; después se revisan y consolidan desde el escritorio.</p>
-          <div class="inline-tags"><span>PWA</span><span>Modo offline</span><span>Red local</span></div>
+          <div class="feature-top"><span class="feature-no">06 / VENDIMIA</span><span class="feature-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><rect x="6" y="2" width="12" height="20" rx="2"/><path d="M10 5h4m-3 14h2"/></svg></span></div>
+          <h3>Recepción desde el móvil</h3>
+          <p>Registro de pesadas, fecha, cajas, grado y bodega de destino. Los tickets se sincronizan, se revisan en escritorio y se consolidan en producción.</p>
+          <div class="inline-tags"><span>PWA</span><span>Cola local</span><span>Sincronización</span></div>
         </article>
         <article class="feature">
           <div class="feature-top"><span class="feature-no">07 / BODEGAS</span><span class="feature-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M4 21V8l8-5 8 5v13Z"/><path d="M8 12h2m4 0h2M8 16h2m4 0h2M2 21h20"/></svg></span></div>
           <h3>Bodegas y valoración</h3>
-          <p>Gestión de varias bodegas, tickets asociados al destino y condiciones comerciales por campaña. Calcula una valoración estimada a partir de kilos, precio, IVA y retención configurados; no genera liquidaciones ni facturas.</p>
-          <div class="inline-tags"><span>Multi-bodega</span><span>€/kg</span><span>Campañas</span></div>
+          <p>Gestión de bodegas, condiciones por campaña y valoración estimada de las entregas según kilos y parámetros comerciales configurados. No genera liquidaciones ni facturas comerciales.</p>
+          <div class="inline-tags"><span>Condiciones por campaña</span><span>Valoración estimada</span></div>
         </article>
         <article class="feature">
-          <div class="feature-top"><span class="feature-no">08 / CLIMA</span><span class="feature-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M7 18a4 4 0 0 1 .6-8A6 6 0 0 1 19 12a3 3 0 0 1-1 6Z"/><path d="m9 21 2-3m3 3 2-3"/></svg></span></div>
-          <h3>Clima y seguimiento agronómico</h3>
-          <p>Previsión e histórico meteorológico, riesgo orientativo de mildiu, grados-día, balance hídrico y ventanas de vendimia. Utiliza Open-Meteo y necesita conexión para renovar datos y fincas con geometría.</p>
-          <div class="inline-tags"><span>Open-Meteo</span><span>GDD</span><span>Alertas orientativas</span></div>
+          <div class="feature-top"><span class="feature-no">08 / CUMPLIMIENTO</span><span class="feature-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M12 3 20 6v5c0 5-3.4 8-8 10-4.6-2-8-5-8-10V6Z"/><path d="m8 12 2.5 2.5L16 9"/></svg></span></div>
+          <h3>Auditoría DO Valdeorras</h3>
+          <p>Importación de Hoja DO y RVG, vinculación con fincas y comprobaciones cruzadas para revisar cupos y datos declarados.</p>
+          <div class="inline-tags"><span>Hoja DO</span><span>RVG</span><span>Auditoría cruzada</span></div>
         </article>
         <article class="feature">
-          <div class="feature-top"><span class="feature-no">09 / LABORES</span><span class="feature-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M14 4 20 10M5 19l9-9m-6 1-3-3 3-3 3 3M14 4l3-3 4 4-3 3"/><path d="M3 21h7"/></svg></span></div>
-          <h3>Tratamientos y tareas</h3>
-          <p>Cuaderno de tratamientos fitosanitarios, planificación de labores y registro de tareas por subparcela. Algunas operaciones de edición conservan limitaciones documentadas en el manual.</p>
-          <div class="inline-tags"><span>Cuaderno de campo</span><span>Plazos de seguridad</span><span>Labores</span></div>
+          <div class="feature-top"><span class="feature-no">09 / INFORMACIÓN</span><span class="feature-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M6 3h8l4 4v14H6z"/><path d="M14 3v5h5M9 13h6M9 17h6"/></svg></span></div>
+          <h3>Facturas, análisis e informes</h3>
+          <p>Gabinete de facturas, comparativas productivas y exportaciones PDF, HTML o CSV donde existe un generador disponible. El catálogo de informes sigue en ampliación.</p>
+          <div class="inline-tags"><span>Documentos</span><span>PDF / HTML / CSV</span></div>
         </article>
       </div>
     </div>
   </section>
 
   <section class="section section-dark" id="campo">
-    <div class="wrap field-grid">
-      <div class="split-copy">
+    <div class="wrap">
+      <div class="section-dark-head">
         <p class="eyebrow">Diseñada para salir al campo</p>
         <h2>Registrar primero.<br><em>Sincronizar después.</em></h2>
-        <p>La PWA móvil sirve para acercar la consulta y la captura de datos al lugar donde suceden las labores. En recepción de vendimia, cada pesada lleva un identificador único para evitar duplicados al reenviarla.</p>
-        <div class="field-points">
-          <div class="field-point"><span class="check">✓</span><div><strong>Trabajo sin conexión</strong><span>La interfaz móvil puede conservar registros mientras no hay red.</span></div></div>
-          <div class="field-point"><span class="check">✓</span><div><strong>Datos asociados a la explotación</strong><span>Las pesadas incluyen parcela, subparcela, kilos y grado Baumé estimado.</span></div></div>
-          <div class="field-point"><span class="check">✓</span><div><strong>Consolidación desde el escritorio</strong><span>Las pesadas recibidas se pueden consolidar en la producción de la campaña.</span></div></div>
-        </div>
+        <p>La PWA móvil acerca la consulta y la captura de datos al lugar donde ocurren las labores. La sincronización no sustituye al escritorio: la aplicación debe estar abierta y los dispositivos deben poder comunicarse.</p>
       </div>
-      <div class="mobile-pair" aria-label="Capturas reales de la aplicación móvil">
-        <div class="mobile-shot-card"><img src="assets/vista_movil_finca.png" alt="Captura real de la PWA móvil con información de una finca" loading="lazy"><p>Consulta de finca</p></div>
-        <div class="mobile-shot-card"><img src="assets/vista_movil_campa%C3%B1a.png" alt="Captura real de la PWA móvil con información de campaña" loading="lazy"><p>Información de campaña</p></div>
+      <div class="flow-grid">
+        <article class="flow-step">
+          <span class="flow-num">01 / REGISTRO</span><div class="flow-icon" aria-hidden="true">✍</div>
+          <h3>Registrar en el viñedo</h3><p>Pesadas, tratamientos y tareas desde el móvil, asociados a parcelas y subparcelas.</p>
+        </article>
+        <article class="flow-step">
+          <span class="flow-num">02 / SINCRONIZACIÓN</span><div class="flow-icon" aria-hidden="true">↔</div>
+          <h3>Guardar y sincronizar</h3><p>Los registros pueden quedar en una cola local y enviarse al recuperar la conexión con el PC.</p>
+        </article>
+        <article class="flow-step">
+          <span class="flow-num">03 / REVISIÓN</span><div class="flow-icon" aria-hidden="true">✓</div>
+          <h3>Revisar y consolidar</h3><p>En recepción de vendimia, revisar los tickets y volcarlos a producción cuando se confirma la jornada.</p>
+        </article>
       </div>
+      <p class="flow-foot"><strong>Condición técnica:</strong> el PC de bodega debe tener Gestión Vitícola abierto. Para instalar la PWA y preparar su uso sin cobertura se necesita HTTPS; el intercambio por red local también exige que los dispositivos puedan comunicarse.</p>
     </div>
   </section>
 
   <section class="section" id="capturas">
     <div class="wrap">
       <div class="section-head">
-        <div><p class="eyebrow">La aplicación por dentro</p><h2>Capturas de la herramienta,<br><em>no pantallas inventadas.</em></h2></div>
-        <p class="section-lead">Una selección de las vistas disponibles hoy en el proyecto. Las pantallas de trabajo de campo y tratamiento se identifican por separado cuando siguen siendo demostrativas.</p>
+        <div><p class="eyebrow">La aplicación por dentro</p><h2>Ver para entender.<br><em>Datos con contexto.</em></h2></div>
+        <p class="section-lead">Una selección de capturas reales del repositorio. Cada imagen muestra una vista concreta disponible; las funciones incompletas y sus condiciones se describen en Estado real.</p>
       </div>
       <div class="gallery-grid">
         <article class="shot-card">
-          <div class="shot-media"><img src="assets/vista_gestion_fincas.png" alt="Captura de escritorio con mapa, estructura de fincas y subparcelas" loading="lazy"></div>
-          <div class="shot-caption"><div class="shot-kicker">Escritorio · Cartografía</div><h3>Gestión de fincas</h3><p>Árbol de parcelas y subparcelas, mapa y acceso a las fichas de los recintos.</p></div>
+          <div class="shot-media"><img src="assets/vista_gestion_fincas.png" alt="Captura real de Gestión Vitícola: mapa, parcelas y subparcelas" loading="lazy"></div>
+          <div class="shot-caption"><div class="shot-kicker">Escritorio · Territorio</div><h3>La explotación de un vistazo</h3><p>Mapa, estructura de parcelas y acceso al contexto de cada finca.</p></div>
         </article>
         <article class="shot-card">
-          <div class="shot-media"><img src="assets/vista_informes.png" alt="Captura de pantalla de análisis e informes productivos" loading="lazy"></div>
-          <div class="shot-caption"><div class="shot-kicker">Escritorio · Datos</div><h3>Informes y evolución</h3><p>Indicadores de campaña y visualización de la evolución de la explotación.</p></div>
+          <div class="shot-media"><img src="assets/software_recepcion_vendimia.png" alt="Captura real de recepción de vendimia en el escritorio" loading="lazy"></div>
+          <div class="shot-caption"><div class="shot-kicker">Escritorio · Vendimia</div><h3>Del ticket a la producción</h3><p>Recepción de pesadas, revisión de registros y estado de consolidación.</p></div>
         </article>
       </div>
       <div class="gallery-small">
         <article class="shot-card">
-          <div class="shot-media"><img src="assets/software_recepcion_vendimia.png" alt="Captura de la pantalla de recepción de vendimia en el escritorio" loading="lazy"></div>
-          <div class="shot-caption"><div class="shot-kicker">Escritorio · Vendimia</div><h3>Recepción de pesadas</h3><p>Registros recibidos, estado de consolidación y resumen de la jornada.</p></div>
+          <div class="shot-media"><img src="assets/vista_informes.png" alt="Captura real de análisis e informes productivos" loading="lazy"></div>
+          <div class="shot-caption"><div class="shot-kicker">Escritorio · Análisis</div><h3>Comparar campañas</h3><p>Indicadores y visualización histórica para estudiar la evolución de la explotación.</p></div>
         </article>
         <article class="shot-card">
-          <div class="shot-media"><img class="mobile-preview" src="assets/vista_movil_finca.png" alt="Vista móvil de la ficha de finca" loading="lazy"></div>
-          <div class="shot-caption"><div class="shot-kicker">PWA · Móvil</div><h3>La finca en la mano</h3><p>Acceso móvil a información útil de la explotación.</p></div>
+          <div class="shot-media"><img class="mobile-preview" src="assets/vista_movil_finca.png" alt="Captura real de VitiVal con información de una finca" loading="lazy"></div>
+          <div class="shot-caption"><div class="shot-kicker">VitiVal · Móvil</div><h3>La información acompaña al trabajo</h3><p>Consulta móvil de la información de una finca.</p></div>
         </article>
         <article class="shot-card">
-          <div class="shot-media"><img class="mobile-preview" src="assets/vista_movil_campa%C3%B1a.png" alt="Vista móvil de la información de campaña" loading="lazy"></div>
-          <div class="shot-caption"><div class="shot-kicker">PWA · Móvil</div><h3>Consulta de campaña</h3><p>Otra vista real de la experiencia móvil para consultar datos.</p></div>
+          <div class="shot-media"><img class="mobile-preview" src="assets/vista_movil_campa%C3%B1a.png" alt="Captura real de VitiVal con información de campaña" loading="lazy"></div>
+          <div class="shot-caption"><div class="shot-kicker">VitiVal · Móvil</div><h3>Consultar la campaña</h3><p>Datos de campaña disponibles desde la interfaz móvil.</p></div>
         </article>
       </div>
     </div>
@@ -500,27 +530,27 @@ button, a { -webkit-tap-highlight-color: transparent; }
   <section class="architecture section-soft" id="arquitectura">
     <div class="wrap">
       <div class="architecture-head">
-        <div><p class="eyebrow">Arquitectura y stack</p><h2>Local por diseño.<br><em>Conectada cuando hace falta.</em></h2></div>
-        <p>El escritorio mantiene la base de datos de la explotación. Una API local permite el intercambio con la PWA; los servicios externos se utilizan para consultas concretas, como cartografía, elevación o meteorología.</p>
+        <div><p class="eyebrow">Arquitectura y decisiones técnicas</p><h2>Local por diseño.<br><em>Conectada cuando hace falta.</em></h2></div>
+        <p>La aplicación de escritorio mantiene la base de datos principal. La API local comunica la PWA y los servicios externos aportan información específica, como cartografía, elevación y meteorología, cuando hay conectividad.</p>
       </div>
       <div class="architecture-frame">
-        <img src="assets/arquitectura.png" alt="Arquitectura tecnológica original: escritorio Python, API Flask, base SQLite, PWA móvil y cola de sincronización offline" loading="lazy">
+        <a href="assets/arquitectura.svg" aria-label="Abrir el diagrama de arquitectura en tamaño completo"><img src="assets/arquitectura.svg" alt="Diagrama vectorial de la arquitectura: escritorio Python, API Flask, base de datos SQLite, PWA móvil e integraciones externas" loading="lazy"></a>
       </div>
       <div class="architecture-foot">
-        <div class="architecture-note"><strong>01 · Núcleo local</strong><span>Python 3.13, Tkinter/CustomTkinter y SQLite para la aplicación de escritorio y los datos de explotación.</span></div>
-        <div class="architecture-note"><strong>02 · API de la explotación</strong><span>Flask ofrece endpoints REST/JSON al móvil y permite el intercambio dentro de la red local.</span></div>
-        <div class="architecture-note"><strong>03 · Experiencia móvil</strong><span>PWA con HTML, CSS y JavaScript, pensada para uso móvil y captura de datos sin conexión.</span></div>
+        <div class="architecture-note"><strong>01 · Núcleo local</strong><span>Python 3.13, Tkinter/CustomTkinter y SQLite para la aplicación de escritorio y los datos de la explotación.</span></div>
+        <div class="architecture-note"><strong>02 · API de la explotación</strong><span>Flask ofrece endpoints REST/JSON al móvil y permite el intercambio dentro de una red alcanzable.</span></div>
+        <div class="architecture-note"><strong>03 · Servicios externos</strong><span>Cartografía, elevación y meteorología enriquecen la gestión, pero requieren conectividad para consultar o renovar los datos.</span></div>
       </div>
     </div>
   </section>
 
   <section class="tech-section" aria-labelledby="tech-title">
     <div class="wrap">
-      <div class="tech-intro"><p class="eyebrow">Componentes principales</p><h2 id="tech-title">Tecnología elegida para el trabajo diario.</h2><p>Una combinación pragmática de herramientas de escritorio, datos locales, cartografía y visualización; sin hacer de la nube un requisito para la base de la aplicación.</p></div>
+      <div class="tech-intro"><p class="eyebrow">Componentes principales</p><h2 id="tech-title">Tecnología elegida para el trabajo diario.</h2><p>Una combinación pragmática de escritorio, datos locales, cartografía y visualización, con una separación clara entre la gestión principal y el acceso desde el campo.</p></div>
       <div class="tech-grid">
         <div class="tech-card"><strong>Aplicación y datos</strong><p>Python 3.13<br>Tkinter · CustomTkinter<br>SQLite · archivo local</p></div>
         <div class="tech-card"><strong>API y móvil</strong><p>Flask · REST / JSON<br>HTML · CSS · JavaScript<br>PWA · Service Worker · IndexedDB</p></div>
-        <div class="tech-card"><strong>Gráficos e informes</strong><p>Matplotlib · Plotly<br>Jinja2 · ReportLab<br>Exportación PDF / HTML</p></div>
+        <div class="tech-card"><strong>Gráficos e informes</strong><p>Matplotlib · Plotly<br>Jinja2 · ReportLab<br>PDF, HTML y CSV según el informe</p></div>
         <div class="tech-card"><strong>Mapas e integraciones</strong><p>TkinterMapView · PyProj · GeoJSON<br>SIGPAC / FEGA · Catastro<br>Open-Elevation · Open-Meteo</p></div>
       </div>
     </div>
@@ -529,31 +559,32 @@ button, a { -webkit-tap-highlight-color: transparent; }
   <section class="status-section" id="estado">
     <div class="wrap">
       <div class="status-top">
-        <div class="status-heading"><p class="eyebrow">Estado del desarrollo</p><h2>Transparencia sobre lo que ya es real.</h2><p>Estado resumido según el manual de usuario revisado en octubre de 2026. Se distinguen las funciones operativas de las parciales y de las que aún no están disponibles.</p></div>
+        <div class="status-heading"><p class="eyebrow">Estado del desarrollo</p><h2>Transparencia sobre lo que ya es real.</h2><p>Resumen de capacidades y limitaciones según el manual de usuario revisado en octubre de 2026. El proyecto sigue evolucionando; el grado de madurez de cada módulo importa tanto como su funcionalidad.</p></div>
         <div>
           <div class="status-groups">
             <article class="status-card">
-              <h3>Implementado y conectado</h3>
+              <h3>Operativo y conectado</h3>
               <div class="status-list">
                 <div class="status-item"><strong>Fincas y Ficha 360º</strong><p>Gestión territorial, geometrías y resumen integrado por subparcela.</p><span class="status-pill pill-live">OPERATIVO</span></div>
-                <div class="status-item"><strong>Producción, estimación y agronomía</strong><p>Campañas, estimación manual, reparto proporcional, análisis de suelo y abonado.</p><span class="status-pill pill-live">OPERATIVO</span></div>
-                <div class="status-item"><strong>Tratamientos y tareas de campo</strong><p>Conectados a datos reales; se mantienen limitaciones de edición en algunos flujos.</p><span class="status-pill pill-live">OPERATIVO CON LIMITACIONES</span></div>
-                <div class="status-item"><strong>Vendimia y bodegas</strong><p>Recepción y consolidación de pesadas, varias bodegas y valoración comercial estimada.</p><span class="status-pill pill-live">OPERATIVO CON CONDICIONES</span></div>
+                <div class="status-item"><strong>Producción, estimación y agronomía</strong><p>Producción registrada, estimación manual, reparto proporcional, análisis de suelo y plan de abonado.</p><span class="status-pill pill-live">OPERATIVO</span></div>
+                <div class="status-item"><strong>Tratamientos y tareas</strong><p>Conectados a datos reales, con limitaciones documentadas en ciertos flujos de edición.</p><span class="status-pill pill-live">OPERATIVO CON LIMITACIONES</span></div>
+                <div class="status-item"><strong>Vendimia y bodegas</strong><p>Recepción y consolidación de pesadas, condiciones por campaña y valoración comercial estimada.</p><span class="status-pill pill-live">OPERATIVO CON CONDICIONES</span></div>
                 <div class="status-item"><strong>Auditoría DO y gabinete de facturas</strong><p>Importación de Hoja DO/RVG, auditoría cruzada y gestión documental de facturas.</p><span class="status-pill pill-live">OPERATIVO</span></div>
               </div>
             </article>
             <article class="status-card pending">
-              <h3>En evolución / pendiente</h3>
+              <h3>Parcial, condicionado o pendiente</h3>
               <div class="status-list">
-                <div class="status-item"><strong>Catálogo de informes</strong><p>El manual registra 15 fichas con generador de 58 disponibles; otras salidas siguen en desarrollo.</p><span class="status-pill pill-progress">PARCIAL</span></div>
-                <div class="status-item"><strong>Análisis gráfico</strong><p>Funciona, pero mantiene límites de rendimiento fijos y la exportación HTML no respeta el modo discreto.</p><span class="status-pill pill-progress">CON LIMITACIONES</span></div>
-                <div class="status-item"><strong>Asignar o cambiar documentos legales</strong><p>El mapa es de consulta; la asociación de documentos desde esa vista aún no está implementada.</p><span class="status-pill pill-progress">EN DESARROLLO</span></div>
+                <div class="status-item"><strong>Catálogo de informes</strong><p>15 de las 58 fichas tienen generador conectado según el manual; el resto sigue pendiente.</p><span class="status-pill pill-progress">PARCIAL</span></div>
+                <div class="status-item"><strong>Análisis gráfico</strong><p>El umbral mostrado de 12.000 kg/ha es fijo; el margen utilizable se calcula sobre 7.000 y no debe usarse para control legal.</p><span class="status-pill pill-progress">CON LIMITACIONES</span></div>
+                <div class="status-item"><strong>Edición de tareas</strong><p>El cambio de subparcela no se guarda al editar una tarea; otro posible fallo con tareas que empiezan hoy está pendiente de reproducir.</p><span class="status-pill pill-progress">ERROR CONOCIDO</span></div>
+                <div class="status-item"><strong>Mapa Legal y documentos</strong><p>El mapa permite consultar y abrir documentos; asignarlos o cambiarlos desde esa vista está en desarrollo.</p><span class="status-pill pill-progress">EN DESARROLLO</span></div>
                 <div class="status-item"><strong>Calendario general</strong><p>No existe como pantalla independiente en la versión documentada.</p><span class="status-pill pill-progress">NO DISPONIBLE</span></div>
-                <div class="status-item"><strong>Edición de tareas</strong><p>Hay un error conocido: el cambio de subparcela no se guarda al editar una tarea.</p><span class="status-pill pill-progress">ERROR CONOCIDO</span></div>
               </div>
             </article>
           </div>
-          <div class="notice"><span class="notice-mark" aria-hidden="true">ⓘ</span><p><strong>Condiciones del uso móvil:</strong> el PC de bodega debe tener Gestión Vitícola abierto y móvil y PC deben poder conectarse entre sí. La conexión HTTP de red local permite el intercambio básico; la instalación de la PWA y el uso preparado sin cobertura requieren HTTPS. La configuración de ese acceso depende del equipo donde se despliega.</p></div>
+          <div class="notice"><span class="notice-mark" aria-hidden="true">ⓘ</span><p><strong>Condiciones del uso móvil y del clima:</strong> para sincronizar, el PC de bodega debe tener Gestión Vitícola abierto y ambos dispositivos deben poder comunicarse. Instalar la PWA y preparar su uso sin cobertura requiere HTTPS. La consulta o renovación meteorológica necesita conexión e información geográfica de las fincas; sus indicadores son orientativos.</p></div>
+          <div class="notice notice-sensitive"><span class="notice-mark" aria-hidden="true">!</span><p><strong>Antes de compartir informes HTML:</strong> según el manual, la exportación HTML del Análisis Gráfico no respeta el modo discreto y puede incluir los kilos reales. Si necesitas ocultarlos, no compartas ese HTML; utiliza la exportación PDF, que sí respeta el modo discreto.</p></div>
         </div>
       </div>
     </div>
@@ -563,17 +594,18 @@ button, a { -webkit-tap-highlight-color: transparent; }
     <div class="wrap author-grid">
       <div class="author-visual">
         <div class="author-photo-frame">
-          <img class="author-photo" src="assets/EntreVinhas.jpeg" alt="Foto personal en un viñedo familiar" loading="lazy">
+          <img class="author-photo" src="assets/EntreVinhas.jpeg" alt="Foto personal en las viñas de la familia, en Valdeorras" loading="lazy">
           <span class="author-photo-caption">Tecnología con raíces</span>
         </div>
       </div>
       <div class="author-copy">
         <p class="eyebrow">El origen del proyecto</p>
         <h2>Una herramienta hecha desde dentro del viñedo. <em>Con tecnología y raíces.</em></h2>
-        <p>Llevo años viendo trabajar el viñedo en mi familia. Para mí, además de formar parte de nuestras raíces, es una de las mejores formas de desconectar de la oficina y volver a lo esencial.</p>
-        <p>Cuanto más lo conozco, más pienso en cómo mejorarlo. Mi formación como ingeniero —centrada en sistemas, procesos y resultados medibles— y mi especialización en Data Science me llevaron a unir dos mundos: la tecnología y la viticultura.</p>
-        <p>De esa idea nació <strong>Gestión Vitícola</strong>: un ERP desarrollado desde las necesidades reales de una explotación familiar, pensado para ayudar al pequeño viticultor a organizar el trabajo, entender mejor sus datos y tomar decisiones con más información.</p>
-        <blockquote class="author-quote">«Una herramienta hecha desde dentro del viñedo, con mentalidad de ingeniero y los pies en la tierra.»</blockquote>
+        <p>Desde pequeño he estado vinculado a las viñas de mi familia, en Valdeorras. Además de formar parte de nuestras raíces, el viñedo es una de mis aficiones y una de las mejores formas de desconectar de la oficina y volver a lo esencial.</p>
+        <p>Esa relación me ha permitido conocer de cerca el trabajo del viñedo y sus necesidades reales. También me ha hecho ver cómo gran parte de la información se perdía entre papeles guardados en cajones y cómo otra parte, sencillamente, nunca llegaba a registrarse.</p>
+        <p>Soy ingeniero en Electrónica Industrial y Automática por la Universidade de Vigo y tengo un máster en Data Science e IA. Mi formación me llevó a abordar ese problema desde la ingeniería: ordenar la información, relacionar los datos y convertirlos en algo útil para la toma de decisiones.</p>
+        <p>De esa idea nació <strong>Gestión Vitícola</strong>, una herramienta de gestión vitícola desarrollada desde las necesidades reales de una explotación familiar, pensada para ayudar al pequeño viticultor a organizar su trabajo, conservar la información y comprender mejor la evolución de su viñedo.</p>
+        <blockquote class="author-quote">«Que la información del viñedo no vuelva a quedarse en un cajón.»</blockquote>
         <div class="author-signature">Luis Rodríguez López · Ingeniería y tecnología aplicada al viñedo</div>
         <div class="author-links">
           <a href="https://linkedin.com/in/luisrodriguezlopez96" target="_blank" rel="noopener">LinkedIn ↗</a>
@@ -583,11 +615,11 @@ button, a { -webkit-tap-highlight-color: transparent; }
     </div>
   </section>
 
-  <section class="cta-section">
+  <section class="cta-section" id="repositorio">
     <div class="wrap">
       <div class="cta-panel">
-        <div class="cta-copy"><p class="eyebrow">Proyecto en desarrollo</p><h2>Construido desde las necesidades reales de una explotación.</h2><p>Gestión Vitícola reúne cartografía, campañas, agronomía y análisis en una solución propia que continúa evolucionando a partir del uso y de las necesidades del viñedo.</p></div>
-        <div class="cta-actions"><a class="btn" href="https://github.com/luisrodriguezlopez96/Vineyard_Public" target="_blank" rel="noopener">Explorar el repositorio ↗</a><a class="btn cta-guide" href="docs/guia-funcional.html">Guía funcional ↗</a></div>
+        <div class="cta-copy"><p class="eyebrow">Herramienta en evolución</p><h2>Una herramienta que sigue creciendo con las necesidades del viñedo.</h2><p>Gestión Vitícola reúne cartografía, campañas, agronomía, trabajo de campo y análisis en una solución propia basada en la experiencia de una explotación familiar.</p></div>
+        <div class="cta-actions"><a class="btn" href="https://github.com/luisrodriguezlopez96/Vineyard_Public" target="_blank" rel="noopener">Explorar el repositorio ↗</a><a class="btn cta-guide" href="docs/guia-funcional.html">Consultar la guía funcional ↗</a></div>
       </div>
     </div>
   </section>
